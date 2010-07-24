@@ -1,0 +1,10 @@
+bin
+obj
+_ReSharper.*
+*.csproj.user
+*.resharper
+*.resharper.user
+*.suo
+*.sln.cache
+[Dd]ebug.log
+[Rr]elease.log

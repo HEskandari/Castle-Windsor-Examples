@@ -1,0 +1,9 @@
+This is a small Silverlight application that uses Castle Windsor 2.5 [1] as a Dependency Injection
+container. Inside there are some general practices such as various methods to Register / Resolve
+instances, life time management of objects as well as examples to show how you can add 
+aspect-like features to your classes using Castle Dynamic Proxy.
+
+Think you can help? Send in your patches, comments or ideas at "h.eskandari@gmail.com".
+
+[1] http://www.castleproject.org/
+
