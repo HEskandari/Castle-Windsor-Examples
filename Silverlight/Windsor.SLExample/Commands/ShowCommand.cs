@@ -7,7 +7,7 @@ using Windsor.SLExample.Views;
 namespace Windsor.SLExample.Commands
 {
     [CastleComponent(typeof(ShowCommand<>), Lifestyle = LifestyleType.Transient)]
-    public class ShowCommand<T> : ICommand where T : UIElement
+    public class ShowCommand<TView> : ICommand where TView : UIElement
     {
         private readonly MainView _mainView;
 
@@ -18,7 +18,7 @@ namespace Windsor.SLExample.Commands
 
         private void Show()
         {
-            _mainView.Show<T>();
+            _mainView.Show<TView>();
         }
 
         public bool CanExecute(object parameter)

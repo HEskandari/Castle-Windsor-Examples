@@ -18,9 +18,8 @@ namespace Windsor.SLExample.Installers
             //Each customer may override the default lifestyle using an attribute (see Customer Factory)
             container.AddFacility<TypedFactoryFacility>();
             container.Register(Component.For<ICustomerRepository>()
-                                   .ImplementedBy<CustomerRepository>(),
-                               Component.For<ICustomerFactory>()
-                                   .ImplementedBy<CustomerFactory>(),
+                                   .ImplementedBy<CustomerRepository>()
+                                   .DependsOn(Property.ForKey("connectinString").Eq("Fake connection string for fake repository, but you get the idea")),
                                Component.For<IModelFactory>()
                                    .AsFactory());
         }
