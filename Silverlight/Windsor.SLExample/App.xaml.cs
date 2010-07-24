@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Windows;
-using Microsoft.Practices.ServiceLocation;
+
 using Windsor.SLExample.Startup;
-using Windsor.SLExample.Views;
 
 namespace Windsor.SLExample
 {
@@ -24,12 +23,10 @@ namespace Windsor.SLExample
         {
             _guyWire.Wire();
 
-            //Service locator pattern! Boo hoo!
-            //Try NOT to do this if possible
-            RootVisual = ServiceLocator.Current.GetInstance<MainView>(); 
+            RootVisual = _guyWire.GetRoot();
         }
 
-        private void OnExit(object  sender, EventArgs e)
+        private void OnExit(object sender, EventArgs e)
         {
             _guyWire.Dewire();
         }

@@ -85,7 +85,8 @@
     </Compile>
     <Compile Include="Commands\ShowCommand.cs" />
     <Compile Include="Commands\SaveCustomerCommand.cs" />
-    <Compile Include="Container\Adapter.cs" />
+    <Compile Include="Factories\ICustomerFactory.cs" />
+    <Compile Include="Factories\IModelFactory.cs" />
     <Compile Include="Installers\BehaviorInstaller.cs" />
     <Compile Include="Installers\CommandInstaller.cs" />
     <Compile Include="Installers\ModelInstaller.cs" />

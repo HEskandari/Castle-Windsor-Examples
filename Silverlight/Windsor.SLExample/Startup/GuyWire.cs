@@ -1,8 +1,11 @@
 using Castle.Windsor;
 using Castle.Windsor.Installer;
+using System.Windows;
+using Windsor.SLExample.Views;
 
 namespace Windsor.SLExample.Startup
 {
+
     public class GuyWire
     {
         private IWindsorContainer _container;
@@ -34,6 +37,11 @@ namespace Windsor.SLExample.Startup
             }
 
             _container = null;
+        }
+
+        public UIElement GetRoot()
+        {
+            return _container.Resolve<MainView>();
         }
     }
 }

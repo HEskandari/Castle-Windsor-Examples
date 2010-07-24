@@ -1,27 +1,23 @@
 using Castle.Core;
-using Castle.Windsor;
+using System;
 using Windsor.SLExample.Model;
 
 namespace Windsor.SLExample.Factories
 {
-    public interface ICustomerFactory
-    {
-        Customer Create(string firstname, string lastname);
-    }
 
     [Singleton]
     public class CustomerFactory : ICustomerFactory
     {
-        private readonly IWindsorContainer _container;
+        private readonly Func<Customer> _factory;
 
-        public CustomerFactory(IWindsorContainer container)
+        public CustomerFactory(Func<Customer> factory)
         {
-            _container = container;
+            _factory = factory;
         }
 
         public Customer Create(string firstname, string lastname)
         {
-            var c = _container.Resolve<Customer>();
+            var c = _factory.Invoke();
 
             c.Firstname = firstname;
             c.Lastname = lastname;

@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel;
 using Castle.Core;
-using Microsoft.Practices.ServiceLocation;
+using Windsor.SLExample.Factories;
 using Windsor.SLExample.Commands;
 
 namespace Windsor.SLExample.Views
 {
+
     [Singleton]
     public partial class MainView : INotifyPropertyChanged
     {
@@ -12,12 +13,14 @@ namespace Windsor.SLExample.Views
         private ShowCommand<CustomersView> _showCustomersCommand;
         private ShowCommand<EditCustomerView> _editCustomerCommand;
         private ShowCommand<NewCustomerView> _newCustomerCommand;
+        private readonly IModelFactory _models;
 
-        public MainView()
+        public MainView(IModelFactory models)
         {
             InitializeComponent();
 
             DataContext = this;
+            _models = models;
         }
 
         public ShowCommand<CustomersView> ShowCustomers
@@ -53,9 +56,11 @@ namespace Windsor.SLExample.Views
         public object CurrentModel
         {
             get { return _currentModel; }
-            set
+            private set
             {
+                var oldModel = _currentModel;
                 _currentModel = value;
+                _models.FreeUpModel(oldModel);
                 RaisePropertyChanged("CurrentModel");
             }
         }
@@ -63,7 +68,7 @@ namespace Windsor.SLExample.Views
         public void Show<TModel>()
         {
             //Use pull model
-            CurrentModel = ServiceLocator.Current.GetInstance<TModel>();
+            CurrentModel = _models.CreateModel<TModel>();
         }
 
         protected void RaisePropertyChanged(string propertyName)
