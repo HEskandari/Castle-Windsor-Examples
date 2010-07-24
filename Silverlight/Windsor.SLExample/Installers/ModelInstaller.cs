@@ -15,8 +15,7 @@ namespace Windsor.SLExample.Installers
                                        .Where(t => t.Namespace.EndsWith("Model"))
                                        .Configure(c => c.LifeStyle.Transient
                                                         .Proxy.AdditionalInterfaces(typeof(IEditableObject), typeof(INotifyPropertyChanged))
-                                                        .Interceptors(typeof(EditableBehavior), typeof(NotifyPropertyChangedBehavior))
-                              ));
+                                                        .Interceptors(typeof(EditableBehavior), typeof(NotifyPropertyChangedBehavior))));
         }
     }
 }

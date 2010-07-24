@@ -1,5 +1,5 @@
-bin
-obj
+[Bb]in
+[Oo]bj
 _ReSharper.*
 *.csproj.user
 *.resharper

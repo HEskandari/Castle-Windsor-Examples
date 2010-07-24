@@ -3,6 +3,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using Microsoft.Practices.ServiceLocation;
 using Windsor.SLExample.Container;
+using Windsor.SLExample.Factories;
 using Windsor.SLExample.Services;
 using Windsor.SLExample.Services.Impl;
 

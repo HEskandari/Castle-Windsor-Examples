@@ -7,8 +7,13 @@ namespace Windsor.SLExample.Startup
     {
         private IWindsorContainer _container;
 
-        public GuyWire() : this(new WindsorContainer())
+        public GuyWire() : this(CreateContainer())
         {
+        }
+
+        private static IWindsorContainer CreateContainer()
+        {
+            return new WindsorContainer();
         }
 
         public GuyWire(IWindsorContainer container)

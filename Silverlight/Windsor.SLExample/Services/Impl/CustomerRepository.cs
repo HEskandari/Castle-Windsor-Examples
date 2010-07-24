@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Windsor.SLExample.Factories;
 using Windsor.SLExample.Model;
 using System.Linq;
 

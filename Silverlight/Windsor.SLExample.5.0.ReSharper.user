@@ -8,57 +8,33 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Container/f:Adapter.cs" caret="1355" fromTop="47" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="0" fromTop="0" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:CommandInstaller.cs" caret="611" fromTop="14" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ViewInstaller.cs" caret="728" fromTop="16" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml.cs" caret="0" fromTop="0" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/f:IRepository.cs" caret="518" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/f:ICustomerRepository.cs" caret="124" fromTop="3" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="28" fromTop="0" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:BehaviorInstaller.cs" caret="359" fromTop="10" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml" caret="723" fromTop="11" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="253" fromTop="7" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml" caret="987" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/f:ICustomerFactory.cs" caret="188" fromTop="5" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="1340" fromTop="27" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="261" fromTop="13" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:NotifyPropertyChangedBehavior.cs" caret="1327" fromTop="7" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml.cs" caret="592" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerFactory.cs" caret="485" fromTop="11" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="802" fromTop="9" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="1508" fromTop="52" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="888" fromTop="20" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml" caret="926" fromTop="13" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml" caret="448" fromTop="7" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:EditableBehavior.cs" caret="3152" fromTop="91" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="199" fromTop="6" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="0" fromTop="0" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml.cs" caret="120" fromTop="3" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="1177" fromTop="17" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="254" fromTop="11" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ViewInstaller.cs" caret="575" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Container/f:Adapter.cs" caret="1020" fromTop="10" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="231" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="844" fromTop="16" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/f:ICustomerRepository.cs" caret="153" fromTop="5" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="868" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="704" fromTop="20" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerFactory.cs" caret="263" fromTop="9" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="699" fromTop="14" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="48" fromTop="0" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="425" fromTop="12" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="583" fromTop="14" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="1340" fromTop="27" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml.cs" caret="1156" fromTop="16" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="95" fromTop="3" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="173" fromTop="8" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="261" fromTop="13" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="825" fromTop="9" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml" caret="985" fromTop="16" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml" caret="342" fromTop="4" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml" caret="595" fromTop="9" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml.cs" caret="576" fromTop="17" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:EditableBehavior.cs" caret="3193" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="708" fromTop="8" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="0" fromTop="0" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="434" fromTop="14" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="455" fromTop="16" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="642" fromTop="17" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="731" fromTop="29" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="280" fromTop="8" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="480" fromTop="12" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="945" fromTop="13" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="202" fromTop="4" />
@@ -66,6 +42,25 @@
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="334" fromTop="10" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="660" fromTop="21" />
       <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml" caret="448" fromTop="7" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="596" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="535" fromTop="15" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="225" fromTop="5" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="380" fromTop="16" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="0" fromTop="0" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ViewInstaller.cs" caret="575" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="947" fromTop="20" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="224" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="455" fromTop="18" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="18" fromTop="0" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="477" fromTop="17" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="619" fromTop="22" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="1365" fromTop="15" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="942" fromTop="17" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="28" fromTop="0" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="397" fromTop="11" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="913" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/f:ICustomerRepository.cs" caret="153" fromTop="5" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="545" fromTop="16" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -81,36 +76,36 @@
   </UnitTestRunnerNUnit>
   <CompletionStatisticsManager>
     <ItemStatistics item="Default">
-      <Item value="public" priority="29" />
+      <Item value="public" priority="33" />
       <Item value="void" priority="8" />
       <Item value="IWindowProvider" priority="0" />
-      <Item value="IWindsorContainer" priority="4" />
+      <Item value="IWindsorContainer" priority="6" />
       <Item value="GuyWire`0" priority="2" />
-      <Item value="IWindsorContainer`0" priority="3" />
-      <Item value="container" priority="14" />
+      <Item value="IWindsorContainer`0" priority="4" />
+      <Item value="container" priority="22" />
       <Item value="this" priority="6" />
-      <Item value="new" priority="14" />
+      <Item value="new" priority="15" />
       <Item value="WindsorContainer" priority="0" />
-      <Item value="_container" priority="11" />
+      <Item value="_container" priority="17" />
       <Item value="FromAssembly" priority="0" />
       <Item value="if" priority="2" />
-      <Item value="null" priority="7" />
+      <Item value="null" priority="8" />
       <Item value="GuyWire" priority="1" />
       <Item value="Exit" priority="0" />
       <Item value="override" priority="0" />
       <Item value="private" priority="4" />
-      <Item value="object" priority="3" />
+      <Item value="object" priority="6" />
       <Item value="EventArgs`0" priority="0" />
       <Item value="_guyWire" priority="3" />
-      <Item value="interface" priority="4" />
-      <Item value="string" priority="6" />
+      <Item value="interface" priority="6" />
+      <Item value="string" priority="8" />
       <Item value="int" priority="0" />
       <Item value="Customer" priority="5" />
       <Item value="IWindsorInstaller" priority="4" />
       <Item value="ICustomerService" priority="0" />
       <Item value="Transient" priority="2" />
       <Item value="ICustomerService`0" priority="0" />
-      <Item value="return" priority="34" />
+      <Item value="return" priority="39" />
       <Item value="List&lt;Customer&gt;" priority="0" />
       <Item value="Firstname" priority="2" />
       <Item value="Lastname" priority="2" />
@@ -126,16 +121,16 @@
       <Item value="AsyncCallback`0" priority="0" />
       <Item value="IStartupService`0" priority="0" />
       <Item value="AllTypes`0" priority="3" />
-      <Item value="t" priority="5" />
+      <Item value="t" priority="6" />
       <Item value="false" priority="0" />
-      <Item value="c" priority="11" />
+      <Item value="c" priority="16" />
       <Item value="AbstractFacility" priority="0" />
       <Item value="delegate" priority="8" />
       <Item value="MessageBox" priority="0" />
       <Item value="DataContext" priority="2" />
-      <Item value="Component`0" priority="4" />
+      <Item value="Component`0" priority="5" />
       <Item value="CastleComponent" priority="0" />
-      <Item value="typeof" priority="4" />
+      <Item value="typeof" priority="6" />
       <Item value="ShowCustomerCommand`0" priority="3" />
       <Item value="Lifestyle" priority="0" />
       <Item value="ShowCustomers" priority="0" />
@@ -150,9 +145,9 @@
       <Item value="TService`0" priority="2" />
       <Item value="key" priority="0" />
       <Item value="Adapter" priority="0" />
-      <Item value="T`0" priority="2" />
-      <Item value="IRepository" priority="3" />
-      <Item value="Customer`0" priority="6" />
+      <Item value="T`0" priority="7" />
+      <Item value="IRepository" priority="4" />
+      <Item value="Customer`0" priority="11" />
       <Item value="Predicate" priority="0" />
       <Item value="predicate" priority="1" />
       <Item value="GetAllCustomers`0" priority="0" />
@@ -162,7 +157,7 @@
       <Item value="_mainView" priority="7" />
       <Item value="mainView" priority="6" />
       <Item value="var" priority="8" />
-      <Item value="TModel`0" priority="0" />
+      <Item value="TModel`0" priority="2" />
       <Item value="value" priority="7" />
       <Item value="INotifyPropertyChanged" priority="3" />
       <Item value="protected" priority="1" />
@@ -178,11 +173,11 @@
       <Item value="customerRepository" priority="0" />
       <Item value="repository" priority="3" />
       <Item value="parameter" priority="4" />
-      <Item value="as" priority="3" />
+      <Item value="as" priority="4" />
       <Item value="EditCustomerCommand`0" priority="0" />
       <Item value="_editCustomerCommand" priority="2" />
       <Item value="IList" priority="0" />
-      <Item value="static" priority="0" />
+      <Item value="static" priority="1" />
       <Item value="CustomerRepository`0" priority="0" />
       <Item value="CustomersData" priority="5" />
       <Item value="true" priority="4" />
@@ -224,20 +219,36 @@
       <Item value="dg" priority="0" />
       <Item value="target" priority="0" />
       <Item value="_customersData" priority="1" />
-      <Item value="where" priority="0" />
-      <Item value="class" priority="0" />
+      <Item value="where" priority="1" />
+      <Item value="class" priority="1" />
       <Item value="IShowCommand" priority="0" />
       <Item value="ShowCommand" priority="3" />
       <Item value="Show`1" priority="0" />
       <Item value="EditCustomerView`0" priority="0" />
       <Item value="CustomersView`0" priority="0" />
+      <Item value="FactorySupportFacility" priority="0" />
+      <Item value="u" priority="1" />
+      <Item value="v" priority="0" />
+      <Item value="f" priority="4" />
+      <Item value="IModelFactory" priority="1" />
+      <Item value="k" priority="0" />
+      <Item value="IModelFactory`0" priority="3" />
+      <Item value="modelFactory" priority="1" />
+      <Item value="_modelFactory" priority="1" />
+      <Item value="ModelFactory" priority="0" />
+      <Item value="ToString`0" priority="0" />
+      <Item value="Type" priority="0" />
+      <Item value="type" priority="0" />
+      <Item value="Type`0" priority="0" />
+      <Item value="ModelFactory`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Castle.Windsor.IWindsorContainer">
       <Item value="Install`0" priority="0" />
       <Item value="Dispose`0" priority="0" />
-      <Item value="Register`0" priority="11" />
-      <Item value="Resolve`0" priority="6" />
+      <Item value="Register`0" priority="13" />
+      <Item value="Resolve`0" priority="10" />
       <Item value="ResolveAll`1" priority="1" />
+      <Item value="AddFacility`1" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Castle.Windsor.Installer.FromAssembly">
       <Item value="This`0" priority="0" />
@@ -247,14 +258,17 @@
       <Item value="Wire`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Castle.MicroKernel.Registration.Component">
-      <Item value="For`5" priority="4" />
+      <Item value="For`5" priority="5" />
       <Item value="IsCastleComponent`0" priority="0" />
+      <Item value="IsInNamespace`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.ComponentRegistration`1">
-      <Item value="ImplementedBy`0" priority="3" />
+      <Item value="ImplementedBy`0" priority="4" />
       <Item value="LifeStyle" priority="1" />
       <Item value="Interceptors`0" priority="0" />
       <Item value="Instance`0" priority="1" />
+      <Item value="UsingFactoryMethod`1" priority="2" />
+      <Item value="UsingFactory`2" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.Lifestyle.LifestyleGroup`1">
       <Item value="Is`0" priority="1" />
@@ -272,8 +286,9 @@
       <Item value="FromAssembly`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.FromAssemblyDescriptor">
-      <Item value="Where`0" priority="2" />
+      <Item value="Where`0" priority="3" />
       <Item value="BasedOn`0" priority="0" />
+      <Item value="Pick`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Type">
       <Item value="Namespace" priority="3" />
@@ -293,6 +308,7 @@
       <Item value="ImplementedBy`0" priority="0" />
       <Item value="Implementation" priority="0" />
       <Item value="Proxy" priority="1" />
+      <Item value="ServiceType" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Windsor.SLExample.Facilities.ApplicationStartupFacility">
       <Item value="Kernel" priority="0" />
@@ -367,6 +383,16 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Windows.Controls.DataGrid">
       <Item value="ItemsSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.Windsor.WindsorContainer">
+      <Item value="Kernel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.IKernel">
+      <Item value="ReleasePolicy" priority="0" />
+      <Item value="Resolve`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Factories.IModelFactory">
+      <Item value="Create`0" priority="2" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

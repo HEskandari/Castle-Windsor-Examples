@@ -95,9 +95,8 @@
     <Compile Include="Interceptors\NotifyPropertyChangedBehavior.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ICustomerFactory.cs" />
+    <Compile Include="Factories\CustomerFactory.cs" />
     <Compile Include="Services\ICustomerRepository.cs" />
-    <Compile Include="Services\Impl\CustomerFactory.cs" />
     <Compile Include="Services\Impl\CustomerRepository.cs" />
     <Compile Include="Services\IRepository.cs" />
     <Compile Include="Startup\GuyWire.cs" />

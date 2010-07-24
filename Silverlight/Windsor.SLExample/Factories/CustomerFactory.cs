@@ -1,10 +1,14 @@
-using System;
 using Castle.Core;
 using Castle.Windsor;
 using Windsor.SLExample.Model;
 
-namespace Windsor.SLExample.Services.Impl
+namespace Windsor.SLExample.Factories
 {
+    public interface ICustomerFactory
+    {
+        Customer Create(string firstname, string lastname);
+    }
+
     [Singleton]
     public class CustomerFactory : ICustomerFactory
     {
