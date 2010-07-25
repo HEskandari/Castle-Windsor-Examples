@@ -26,7 +26,7 @@ namespace Castle.Samples.WindsorSilverlight.Installers
 		{
 			//Register all types and filter by namespace
 			container.Register(AllTypes.FromThisAssembly()
-			                   	.Where(Component.IsInNamespace("Windsor.SLExample.Views")));
+								.Where(Component.IsInNamespace("Castle.Samples.WindsorSilverlight.Views")));
 		}
 
 		#endregion
