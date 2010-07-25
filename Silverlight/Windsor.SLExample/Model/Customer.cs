@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Model
+namespace Castle.Samples.WindsorSilverlight.Model
 {
 	using System;
 

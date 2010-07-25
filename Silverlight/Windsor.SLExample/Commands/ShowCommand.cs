@@ -12,15 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Commands
+namespace Castle.Samples.WindsorSilverlight.Commands
 {
 	using System;
 	using System.Windows;
 	using System.Windows.Input;
 
 	using Castle.Core;
-
-	using Windsor.SLExample.Views;
+	using Castle.Samples.WindsorSilverlight.Views;
 
 	[CastleComponent(typeof (ShowCommand<>), Lifestyle = LifestyleType.Transient)]
 	public class ShowCommand<TView> : ICommand where TView : UIElement

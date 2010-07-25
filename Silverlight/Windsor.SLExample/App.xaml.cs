@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample
+namespace Castle.Samples.WindsorSilverlight
 {
 	using System;
 	using System.Diagnostics;
 	using System.Windows;
 	using System.Windows.Browser;
 
-	using Windsor.SLExample.Startup;
+	using Castle.Samples.WindsorSilverlight.Startup;
 
 	public partial class App
 	{

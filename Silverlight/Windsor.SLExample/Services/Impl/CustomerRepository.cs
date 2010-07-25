@@ -12,14 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Services.Impl
+namespace Castle.Samples.WindsorSilverlight.Services.Impl
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 
-	using Windsor.SLExample.Factories;
-	using Windsor.SLExample.Model;
+	using Castle.Samples.WindsorSilverlight.Factories;
+	using Castle.Samples.WindsorSilverlight.Model;
 
 	/// <summary>
 	/// This should be a real service in a real application, 

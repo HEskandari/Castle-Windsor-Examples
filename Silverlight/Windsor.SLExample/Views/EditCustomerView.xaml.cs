@@ -12,11 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Views
+namespace Castle.Samples.WindsorSilverlight.Views
 {
 	using Castle.Core;
-
-	using Windsor.SLExample.Services;
+	using Castle.Samples.WindsorSilverlight.Services;
 
 	[Transient]
 	public partial class EditCustomerView

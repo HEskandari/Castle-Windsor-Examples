@@ -12,16 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Commands
+namespace Castle.Samples.WindsorSilverlight.Commands
 {
 	using System;
 	using System.ComponentModel;
 	using System.Windows.Input;
 
 	using Castle.Core;
-
-	using Windsor.SLExample.Model;
-	using Windsor.SLExample.Services;
+	using Castle.Samples.WindsorSilverlight.Model;
+	using Castle.Samples.WindsorSilverlight.Services;
 
 	[CastleComponent(typeof (SaveCustomerCommand), Lifestyle = LifestyleType.Transient)]
 	public class SaveCustomerCommand : ICommand

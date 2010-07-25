@@ -12,16 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Installers
+namespace Castle.Samples.WindsorSilverlight.Installers
 {
 	using Castle.Facilities.TypedFactory;
 	using Castle.MicroKernel.Registration;
 	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Samples.WindsorSilverlight.Factories;
+	using Castle.Samples.WindsorSilverlight.Services;
+	using Castle.Samples.WindsorSilverlight.Services.Impl;
 	using Castle.Windsor;
-
-	using Windsor.SLExample.Factories;
-	using Windsor.SLExample.Services;
-	using Windsor.SLExample.Services.Impl;
 
 	public class ServiceInstaller : IWindsorInstaller
 	{

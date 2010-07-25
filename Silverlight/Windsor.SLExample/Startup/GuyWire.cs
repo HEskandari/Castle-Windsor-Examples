@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Startup
+namespace Castle.Samples.WindsorSilverlight.Startup
 {
 	using System.Windows;
 
+	using Castle.Samples.WindsorSilverlight.Views;
 	using Castle.Windsor;
 	using Castle.Windsor.Installer;
-
-	using Windsor.SLExample.Views;
 
 	public class GuyWire
 	{

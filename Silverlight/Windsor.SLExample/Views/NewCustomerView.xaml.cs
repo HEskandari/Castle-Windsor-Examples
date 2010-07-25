@@ -12,14 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Views
+namespace Castle.Samples.WindsorSilverlight.Views
 {
 	using System.ComponentModel;
 
 	using Castle.Core;
-
-	using Windsor.SLExample.Commands;
-	using Windsor.SLExample.Model;
+	using Castle.Samples.WindsorSilverlight.Commands;
+	using Castle.Samples.WindsorSilverlight.Model;
 
 	[Transient]
 	public partial class NewCustomerView : INotifyPropertyChanged

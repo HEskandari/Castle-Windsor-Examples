@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Services
+namespace Castle.Samples.WindsorSilverlight.Services
 {
-	using Windsor.SLExample.Model;
+	using Castle.Samples.WindsorSilverlight.Model;
 
 	public interface ICustomerRepository : IRepository<Customer>
 	{

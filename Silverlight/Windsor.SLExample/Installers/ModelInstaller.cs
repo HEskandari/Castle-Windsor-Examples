@@ -12,17 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Windsor.SLExample.Installers
+namespace Castle.Samples.WindsorSilverlight.Installers
 {
 	using System;
 	using System.ComponentModel;
 
 	using Castle.MicroKernel.Registration;
 	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Samples.WindsorSilverlight.Interceptors;
+	using Castle.Samples.WindsorSilverlight.Model;
 	using Castle.Windsor;
-
-	using Windsor.SLExample.Interceptors;
-	using Windsor.SLExample.Model;
 
 	public class ModelInstaller : IWindsorInstaller
 	{
