@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,89 +12,93 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.DynamicProxy;
-
-using System;
-using System.ComponentModel;
-using System.Reflection;
-using System.Linq;
-
 namespace Windsor.SLExample.Interceptors
 {
-    public class NotifyPropertyChangedBehavior : IInterceptor
-    {
-        PropertyChangedEventHandler _handler;
+	using System;
+	using System.ComponentModel;
+	using System.Linq;
+	using System.Reflection;
 
-        public void Intercept(IInvocation invocation)
-        {
-            string methodName = invocation.Method.Name;
-            object[] arguments = invocation.Arguments;
-            object proxy = invocation.Proxy;
-            bool isEditableObject = proxy is IEditableObject;
+	using Castle.DynamicProxy;
 
-            if (invocation.Method.DeclaringType.Equals(typeof(INotifyPropertyChanged)))
-            {
-                if (methodName == "add_PropertyChanged")
-                {
-                    StoreHandler((Delegate)arguments[0]);
-                }
-                if (methodName == "remove_PropertyChanged")
-                {
-                    RemoveHandler((Delegate)arguments[0]);
-                }
-            }
+	public class NotifyPropertyChangedBehavior : IInterceptor
+	{
+		private PropertyChangedEventHandler _handler;
 
-            if (!ShouldProceedWithInvocation(methodName))
-                return;
+		#region IInterceptor Members
 
-            invocation.Proceed();
+		public void Intercept(IInvocation invocation)
+		{
+			var methodName = invocation.Method.Name;
+			var arguments = invocation.Arguments;
+			var proxy = invocation.Proxy;
+			var isEditableObject = proxy is IEditableObject;
 
-            NotifyPropertyChanged(methodName, proxy, isEditableObject);
-        }
+			if (invocation.Method.DeclaringType.Equals(typeof (INotifyPropertyChanged)))
+			{
+				if (methodName == "add_PropertyChanged")
+				{
+					StoreHandler((Delegate) arguments[0]);
+				}
+				if (methodName == "remove_PropertyChanged")
+				{
+					RemoveHandler((Delegate) arguments[0]);
+				}
+			}
 
-        protected void OnPropertyChanged(Object sender, PropertyChangedEventArgs e)
-        {
-            PropertyChangedEventHandler eventHandler = _handler;
-            if (eventHandler != null) eventHandler(sender, e);
-        }
+			if (!ShouldProceedWithInvocation(methodName))
+				return;
 
-        protected void RemoveHandler(Delegate @delegate)
-        {
-            _handler = (PropertyChangedEventHandler)Delegate.Remove(_handler, @delegate);
-        }
+			invocation.Proceed();
 
-        protected void StoreHandler(Delegate @delegate)
-        {
-            _handler = (PropertyChangedEventHandler)Delegate.Combine(_handler, @delegate);
-        }
+			NotifyPropertyChanged(methodName, proxy, isEditableObject);
+		}
 
-        protected void NotifyPropertyChanged(string methodName, object proxy, bool isEditableObject)
-        {
-            if ("CancelEdit".Equals(methodName) && isEditableObject)
-            {
-                var properties = proxy.GetType()
-                                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                 .Where(p => p.CanWrite);
+		#endregion
 
-                foreach (var prop in properties)
-                {
-                    OnPropertyChanged(proxy, new PropertyChangedEventArgs(prop.Name));
-                }
-            }
+		protected void OnPropertyChanged(Object sender, PropertyChangedEventArgs e)
+		{
+			var eventHandler = _handler;
+			if (eventHandler != null) eventHandler(sender, e);
+		}
 
-            if (methodName.StartsWith("set_"))
-            {
-                string propertyName = methodName.Substring(4);
+		protected void RemoveHandler(Delegate @delegate)
+		{
+			_handler = (PropertyChangedEventHandler) Delegate.Remove(_handler, @delegate);
+		}
 
-                var args = new PropertyChangedEventArgs(propertyName);
-                OnPropertyChanged(proxy, args);
-            }
-        }
+		protected void StoreHandler(Delegate @delegate)
+		{
+			_handler = (PropertyChangedEventHandler) Delegate.Combine(_handler, @delegate);
+		}
 
-        protected bool ShouldProceedWithInvocation(string methodName)
-        {
-            var methodsWithoutTarget = new[] { "add_PropertyChanged", "remove_PropertyChanged" };
-            return !methodsWithoutTarget.Contains(methodName);
-        }
-    }
+		protected void NotifyPropertyChanged(string methodName, object proxy, bool isEditableObject)
+		{
+			if ("CancelEdit".Equals(methodName) && isEditableObject)
+			{
+				var properties = proxy.GetType()
+					.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+					.Where(p => p.CanWrite);
+
+				foreach (var prop in properties)
+				{
+					OnPropertyChanged(proxy, new PropertyChangedEventArgs(prop.Name));
+				}
+			}
+
+			if (methodName.StartsWith("set_"))
+			{
+				var propertyName = methodName.Substring(4);
+
+				var args = new PropertyChangedEventArgs(propertyName);
+				OnPropertyChanged(proxy, args);
+			}
+		}
+
+		protected bool ShouldProceedWithInvocation(string methodName)
+		{
+			var methodsWithoutTarget = new[] {"add_PropertyChanged", "remove_PropertyChanged"};
+			return !methodsWithoutTarget.Contains(methodName);
+		}
+	}
 }

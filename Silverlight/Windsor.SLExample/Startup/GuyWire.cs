@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,51 +12,51 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.Windows;
-using Castle.Windsor;
-using Castle.Windsor.Installer;
-
-using Windsor.SLExample.Views;
-
 namespace Windsor.SLExample.Startup
 {
+	using System.Windows;
 
-    public class GuyWire
-    {
-        private IWindsorContainer _container;
+	using Castle.Windsor;
+	using Castle.Windsor.Installer;
 
-        public GuyWire() : this(CreateContainer())
-        {
-        }
+	using Windsor.SLExample.Views;
 
-        private static IWindsorContainer CreateContainer()
-        {
-            return new WindsorContainer();
-        }
+	public class GuyWire
+	{
+		private IWindsorContainer _container;
 
-        public GuyWire(IWindsorContainer container)
-        {
-            _container = container;
-        }
+		public GuyWire() : this(CreateContainer())
+		{
+		}
 
-        public void Wire()
-        {
-            _container.Install(FromAssembly.This());
-        }
+		public GuyWire(IWindsorContainer container)
+		{
+			_container = container;
+		}
 
-        public void Dewire()
-        {
-            if(_container != null)
-            {
-                _container.Dispose();
-            }
+		private static IWindsorContainer CreateContainer()
+		{
+			return new WindsorContainer();
+		}
 
-            _container = null;
-        }
+		public void Wire()
+		{
+			_container.Install(FromAssembly.This());
+		}
 
-        public UIElement GetRoot()
-        {
-            return _container.Resolve<MainView>();
-        }
-    }
+		public void Dewire()
+		{
+			if (_container != null)
+			{
+				_container.Dispose();
+			}
+
+			_container = null;
+		}
+
+		public UIElement GetRoot()
+		{
+			return _container.Resolve<MainView>();
+		}
+	}
 }

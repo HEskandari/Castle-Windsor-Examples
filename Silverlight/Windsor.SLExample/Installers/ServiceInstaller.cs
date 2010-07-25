@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,30 +12,34 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.Facilities.TypedFactory;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
-using Windsor.SLExample.Factories;
-using Windsor.SLExample.Services;
-using Windsor.SLExample.Services.Impl;
-
 namespace Windsor.SLExample.Installers
 {
+	using Castle.Facilities.TypedFactory;
+	using Castle.MicroKernel.Registration;
+	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Windsor;
 
-    public class ServiceInstaller : IWindsorInstaller
-    {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
-        {
-            //Register using Service / Impl style using default lifestyle (singleton)
-            //Each customer may override the default lifestyle using an attribute (see Customer Factory)
-            container.AddFacility<TypedFactoryFacility>();
-            container.Register(Component.For<ICustomerRepository>()
-                                   .ImplementedBy<CustomerRepository>()
-                                   .DependsOn(Property.ForKey("serviceUri").Eq("Fake service Uri for fake repository, but you get the idea")),
-                               Component.For<IModelFactory>()
-                                   .AsFactory());
-        }
-    }
+	using Windsor.SLExample.Factories;
+	using Windsor.SLExample.Services;
+	using Windsor.SLExample.Services.Impl;
+
+	public class ServiceInstaller : IWindsorInstaller
+	{
+		#region IWindsorInstaller Members
+
+		public void Install(IWindsorContainer container, IConfigurationStore store)
+		{
+			//Register using Service / Impl style using default lifestyle (singleton)
+			//Each customer may override the default lifestyle using an attribute (see Customer Factory)
+			container.AddFacility<TypedFactoryFacility>();
+			container.Register(Component.For<ICustomerRepository>()
+			                   	.ImplementedBy<CustomerRepository>()
+			                   	.DependsOn(Property.ForKey("serviceUri")
+			                   	           	.Eq("Fake service Uri for fake repository, but you get the idea")),
+			                   Component.For<IModelFactory>()
+			                   	.AsFactory());
+		}
+
+		#endregion
+	}
 }

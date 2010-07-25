@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,19 +12,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
 namespace Windsor.SLExample.Installers
 {
-    public class ViewInstaller : IWindsorInstaller
-    {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
-        {
-            //Register all types and filter by namespace
-            container.Register(AllTypes.FromThisAssembly()
-                                       .Where(Component.IsInNamespace("Windsor.SLExample.Views")));
-        }
-    }
+	using Castle.MicroKernel.Registration;
+	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Windsor;
+
+	public class ViewInstaller : IWindsorInstaller
+	{
+		#region IWindsorInstaller Members
+
+		public void Install(IWindsorContainer container, IConfigurationStore store)
+		{
+			//Register all types and filter by namespace
+			container.Register(AllTypes.FromThisAssembly()
+			                   	.Where(Component.IsInNamespace("Windsor.SLExample.Views")));
+		}
+
+		#endregion
+	}
 }

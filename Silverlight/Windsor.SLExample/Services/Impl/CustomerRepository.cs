@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,52 +12,55 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Linq;
-using System.Collections.Generic;
-
-using Windsor.SLExample.Model;
-using Windsor.SLExample.Factories;
-
 namespace Windsor.SLExample.Services.Impl
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
 
-    /// <summary>
-    /// This should be a real service in a real application, 
-    /// implemented by a WCF, REST or a SOAP based service.
-    /// </summary>
-    public class CustomerRepository : ICustomerRepository
-    {
-        private readonly string _serviceUri;
-        private readonly IList<Customer> _customersData;
+	using Windsor.SLExample.Factories;
+	using Windsor.SLExample.Model;
 
-        public CustomerRepository(CustomerFactory factory, string serviceUri)
-        {
-            _serviceUri = serviceUri; //The service Uri you'll use to fetch the data from.
+	/// <summary>
+	/// This should be a real service in a real application, 
+	/// implemented by a WCF, REST or a SOAP based service.
+	/// </summary>
+	public class CustomerRepository : ICustomerRepository
+	{
+		private readonly IList<Customer> _customersData;
+		private readonly string _serviceUri;
 
-            _customersData = new List<Customer>
-            {
-                factory.Invoke("John", "Doe"),
-                factory.Invoke("Jane", "Doe")
-            };
-        }
+		public CustomerRepository(CustomerFactory factory, string serviceUri)
+		{
+			_serviceUri = serviceUri; //The service Uri you'll use to fetch the data from.
 
-        public Customer Find(Func<Customer, bool> predicate)
-        {
-            return GetAll().Where(predicate).FirstOrDefault();
-        }
+			_customersData = new List<Customer>
+			                 	{
+			                 		factory.Invoke("John", "Doe"),
+			                 		factory.Invoke("Jane", "Doe")
+			                 	};
+		}
 
-        public IList<Customer> GetAll()
-        {
-            return _customersData;
-        }
+		#region ICustomerRepository Members
 
-        public void Save(Customer instance)
-        {
-            if(!_customersData.Contains(instance))
-            {
-                _customersData.Add(instance);
-            }
-        }
-    }
+		public Customer Find(Func<Customer, bool> predicate)
+		{
+			return GetAll().Where(predicate).FirstOrDefault();
+		}
+
+		public IList<Customer> GetAll()
+		{
+			return _customersData;
+		}
+
+		public void Save(Customer instance)
+		{
+			if (!_customersData.Contains(instance))
+			{
+				_customersData.Add(instance);
+			}
+		}
+
+		#endregion
+	}
 }

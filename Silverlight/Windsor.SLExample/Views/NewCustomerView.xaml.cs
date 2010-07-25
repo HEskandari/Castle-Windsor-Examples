@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,54 +12,59 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.Core;
-using System.ComponentModel;
-
-using Windsor.SLExample.Commands;
-using Windsor.SLExample.Model;
-
 namespace Windsor.SLExample.Views
 {
-    [Transient]
-    public partial class NewCustomerView : INotifyPropertyChanged
-    {
-        private SaveCustomerCommand _save;
-        private Customer _customer;
+	using System.ComponentModel;
 
-        public NewCustomerView(Customer customer)
-        {
-            InitializeComponent();
+	using Castle.Core;
 
-            DataContext = this;
+	using Windsor.SLExample.Commands;
+	using Windsor.SLExample.Model;
 
-            CurrentCustomer = customer;
-        }
+	[Transient]
+	public partial class NewCustomerView : INotifyPropertyChanged
+	{
+		private Customer _customer;
+		private SaveCustomerCommand _save;
 
-        public Customer CurrentCustomer
-        {
-            get { return _customer; }
-            set
-            {
-                _customer = value;
-                RaisePropertyChanged("CurrentCustomer");
-            }
-        }
+		public NewCustomerView(Customer customer)
+		{
+			InitializeComponent();
 
-        public SaveCustomerCommand Save
-        {
-            get { return _save; }
-            set
-            {
-                _save = value;
-                RaisePropertyChanged("Save");
-            }
-        }
+			DataContext = this;
 
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+			CurrentCustomer = customer;
+		}
 
-        public event PropertyChangedEventHandler PropertyChanged;
-    }
+		public Customer CurrentCustomer
+		{
+			get { return _customer; }
+			set
+			{
+				_customer = value;
+				RaisePropertyChanged("CurrentCustomer");
+			}
+		}
+
+		public SaveCustomerCommand Save
+		{
+			get { return _save; }
+			set
+			{
+				_save = value;
+				RaisePropertyChanged("Save");
+			}
+		}
+
+		#region INotifyPropertyChanged Members
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		#endregion
+
+		protected void RaisePropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
 }

@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,18 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.DynamicProxy;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
 namespace Windsor.SLExample.Installers
 {
-    public class BehaviorInstaller : IWindsorInstaller
-    {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
-        {
-            container.Register(AllTypes.FromThisAssembly().BasedOn<IInterceptor>());
-        }
-    }
+	using Castle.DynamicProxy;
+	using Castle.MicroKernel.Registration;
+	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Windsor;
+
+	public class BehaviorInstaller : IWindsorInstaller
+	{
+		#region IWindsorInstaller Members
+
+		public void Install(IWindsorContainer container, IConfigurationStore store)
+		{
+			container.Register(AllTypes.FromThisAssembly().BasedOn<IInterceptor>());
+		}
+
+		#endregion
+	}
 }

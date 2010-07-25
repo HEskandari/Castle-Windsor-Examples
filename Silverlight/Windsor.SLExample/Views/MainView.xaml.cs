@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,84 +12,88 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.Core;
-using System.ComponentModel;
-
-using Windsor.SLExample.Factories;
-using Windsor.SLExample.Commands;
-
 namespace Windsor.SLExample.Views
 {
+	using System.ComponentModel;
 
-    [Singleton]
-    public partial class MainView : INotifyPropertyChanged
-    {
-        private object _currentModel;
-        private ShowCommand<CustomersView> _showCustomersCommand;
-        private ShowCommand<EditCustomerView> _editCustomerCommand;
-        private ShowCommand<NewCustomerView> _newCustomerCommand;
-        private readonly IModelFactory _models;
+	using Castle.Core;
 
-        public MainView(IModelFactory models)
-        {
-            InitializeComponent();
+	using Windsor.SLExample.Commands;
+	using Windsor.SLExample.Factories;
 
-            DataContext = this;
-            _models = models;
-        }
+	[Singleton]
+	public partial class MainView : INotifyPropertyChanged
+	{
+		private readonly IModelFactory _models;
+		private object _currentModel;
+		private ShowCommand<EditCustomerView> _editCustomerCommand;
+		private ShowCommand<NewCustomerView> _newCustomerCommand;
+		private ShowCommand<CustomersView> _showCustomersCommand;
 
-        public ShowCommand<CustomersView> ShowCustomers
-        {
-            get { return _showCustomersCommand; }
-            set
-            {
-                _showCustomersCommand = value;
-                RaisePropertyChanged("ShowCustomers");
-            }
-        }
+		public MainView(IModelFactory models)
+		{
+			InitializeComponent();
 
-        public ShowCommand<EditCustomerView> EditCustomers
-        {
-            get { return _editCustomerCommand; }
-            set
-            {
-                _editCustomerCommand = value;
-                RaisePropertyChanged("EditCustomers");
-            }
-        }
+			DataContext = this;
+			_models = models;
+		}
 
-        public ShowCommand<NewCustomerView> NewCustomer
-        {
-            get { return _newCustomerCommand; }
-            set
-            {
-                _newCustomerCommand = value;
-                RaisePropertyChanged("NewCustomer");
-            }
-        }
+		public ShowCommand<CustomersView> ShowCustomers
+		{
+			get { return _showCustomersCommand; }
+			set
+			{
+				_showCustomersCommand = value;
+				RaisePropertyChanged("ShowCustomers");
+			}
+		}
 
-        public object CurrentModel
-        {
-            get { return _currentModel; }
-            private set
-            {
-                var oldModel = _currentModel;
-                _currentModel = value;
-                _models.FreeUpModel(oldModel);
-                RaisePropertyChanged("CurrentModel");
-            }
-        }
+		public ShowCommand<EditCustomerView> EditCustomers
+		{
+			get { return _editCustomerCommand; }
+			set
+			{
+				_editCustomerCommand = value;
+				RaisePropertyChanged("EditCustomers");
+			}
+		}
 
-        public void Show<TModel>()
-        {
-            CurrentModel = _models.CreateModel<TModel>();
-        }
+		public ShowCommand<NewCustomerView> NewCustomer
+		{
+			get { return _newCustomerCommand; }
+			set
+			{
+				_newCustomerCommand = value;
+				RaisePropertyChanged("NewCustomer");
+			}
+		}
 
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+		public object CurrentModel
+		{
+			get { return _currentModel; }
+			private set
+			{
+				var oldModel = _currentModel;
+				_currentModel = value;
+				_models.FreeUpModel(oldModel);
+				RaisePropertyChanged("CurrentModel");
+			}
+		}
 
-        public event PropertyChangedEventHandler PropertyChanged = delegate { };
-    }
+		#region INotifyPropertyChanged Members
+
+		public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+		#endregion
+
+		public void Show<TModel>()
+		{
+			CurrentModel = _models.CreateModel<TModel>();
+		}
+
+		protected void RaisePropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
 }

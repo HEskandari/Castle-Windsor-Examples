@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,40 +12,46 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.ComponentModel;
-using System.Windows.Input;
-using Castle.Core;
-using Windsor.SLExample.Model;
-using Windsor.SLExample.Services;
-
 namespace Windsor.SLExample.Commands
 {
-    [CastleComponent(typeof(SaveCustomerCommand), Lifestyle = LifestyleType.Transient)]
-    public class SaveCustomerCommand : ICommand
-    {
-        public ICustomerRepository Repository;
+	using System;
+	using System.ComponentModel;
+	using System.Windows.Input;
 
-        public SaveCustomerCommand(ICustomerRepository repository)
-        {
-            Repository = repository;
-        }
+	using Castle.Core;
 
-        public bool CanExecute(object parameter)
-        {
-            var c = parameter as Customer;
-            return c != null;
-        }
+	using Windsor.SLExample.Model;
+	using Windsor.SLExample.Services;
 
-        public void Execute(object parameter)
-        {
-            var c = parameter as Customer;
+	[CastleComponent(typeof (SaveCustomerCommand), Lifestyle = LifestyleType.Transient)]
+	public class SaveCustomerCommand : ICommand
+	{
+		public ICustomerRepository Repository;
 
-            ((IEditableObject)c).EndEdit();
+		public SaveCustomerCommand(ICustomerRepository repository)
+		{
+			Repository = repository;
+		}
 
-            Repository.Save(c);
-        }
+		#region ICommand Members
 
-        public event EventHandler CanExecuteChanged = delegate { };
-    }
+		public bool CanExecute(object parameter)
+		{
+			var c = parameter as Customer;
+			return c != null;
+		}
+
+		public void Execute(object parameter)
+		{
+			var c = parameter as Customer;
+
+			((IEditableObject) c).EndEdit();
+
+			Repository.Save(c);
+		}
+
+		public event EventHandler CanExecuteChanged = delegate { };
+
+		#endregion
+	}
 }

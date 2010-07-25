@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,28 +14,19 @@
 
 namespace Windsor.SLExample.Model
 {
-    using System;
+	using System;
 
-    public class Customer
-    {
-        public Customer(DateTime joinedAt)
-        {
-            JoinedAt = joinedAt;
-        }
+	public class Customer
+	{
+		public Customer(DateTime joinedAt)
+		{
+			JoinedAt = joinedAt;
+		}
 
-        public virtual DateTime JoinedAt 
-        {
-            get; private set; 
-        }
+		public virtual DateTime JoinedAt { get; private set; }
 
-        public virtual string Firstname
-        {
-            get; set;
-        }
+		public virtual string Firstname { get; set; }
 
-        public virtual string Lastname
-        {
-            get; set;
-        }
-    }
+		public virtual string Lastname { get; set; }
+	}
 }

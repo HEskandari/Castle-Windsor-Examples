@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,60 +12,61 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Diagnostics;
-using System.Windows;
-
-using Windsor.SLExample.Startup;
-
 namespace Windsor.SLExample
 {
-    public partial class App
-    {
-        private readonly GuyWire _guyWire = new GuyWire();
+	using System;
+	using System.Diagnostics;
+	using System.Windows;
+	using System.Windows.Browser;
 
-        public App()
-        {
-            Startup += OnStartup;
-            Exit += OnExit;
-            UnhandledException += OnUnhandledException;
+	using Windsor.SLExample.Startup;
 
-            InitializeComponent();
-        }
+	public partial class App
+	{
+		private readonly GuyWire _guyWire = new GuyWire();
 
-        private void OnStartup(object sender, StartupEventArgs e)
-        {
-            _guyWire.Wire();
+		public App()
+		{
+			Startup += OnStartup;
+			Exit += OnExit;
+			UnhandledException += OnUnhandledException;
 
-            RootVisual = _guyWire.GetRoot();
-        }
+			InitializeComponent();
+		}
 
-        private void OnExit(object sender, EventArgs e)
-        {
-            _guyWire.Dewire();
-        }
+		private void OnStartup(object sender, StartupEventArgs e)
+		{
+			_guyWire.Wire();
 
-        private void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
-        {
-            if (!Debugger.IsAttached)
-            {
-                e.Handled = true;
-                Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
-            }
-        }
+			RootVisual = _guyWire.GetRoot();
+		}
 
-        private void ReportErrorToDOM(ApplicationUnhandledExceptionEventArgs e)
-        {
-            try
-            {
-                string errorMsg = e.ExceptionObject.Message + e.ExceptionObject.StackTrace;
-                errorMsg = errorMsg.Replace('"', '\'').Replace("\r\n", @"\n");
+		private void OnExit(object sender, EventArgs e)
+		{
+			_guyWire.Dewire();
+		}
 
-                System.Windows.Browser.HtmlPage.Window.Eval("throw new Error(\"Unhandled Error in Silverlight Application " + errorMsg + "\");");
-            }
-            catch (Exception)
-            {
-            }
-        }
-    }
+		private void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
+		{
+			if (!Debugger.IsAttached)
+			{
+				e.Handled = true;
+				Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
+			}
+		}
+
+		private void ReportErrorToDOM(ApplicationUnhandledExceptionEventArgs e)
+		{
+			try
+			{
+				var errorMsg = e.ExceptionObject.Message + e.ExceptionObject.StackTrace;
+				errorMsg = errorMsg.Replace('"', '\'').Replace("\r\n", @"\n");
+
+				HtmlPage.Window.Eval("throw new Error(\"Unhandled Error in Silverlight Application " + errorMsg + "\");");
+			}
+			catch (Exception)
+			{
+			}
+		}
+	}
 }

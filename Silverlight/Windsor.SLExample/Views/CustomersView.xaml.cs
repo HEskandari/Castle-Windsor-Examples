@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,28 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System.ComponentModel;
-using Castle.Core;
-
-using Windsor.SLExample.Services;
-
 namespace Windsor.SLExample.Views
 {
-    [Transient]
-    public partial class CustomersView : INotifyPropertyChanged
-    {
-        public CustomersView(ICustomerRepository repository)
-        {
-            InitializeComponent();
+	using System.ComponentModel;
 
-            customers.ItemsSource = repository.GetAll();
-        }
+	using Castle.Core;
 
-        protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        }
+	using Windsor.SLExample.Services;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-    }
+	[Transient]
+	public partial class CustomersView : INotifyPropertyChanged
+	{
+		public CustomersView(ICustomerRepository repository)
+		{
+			InitializeComponent();
+
+			customers.ItemsSource = repository.GetAll();
+		}
+
+		#region INotifyPropertyChanged Members
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		#endregion
+
+		protected void RaisePropertyChanged(string propertyName)
+		{
+			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
 }

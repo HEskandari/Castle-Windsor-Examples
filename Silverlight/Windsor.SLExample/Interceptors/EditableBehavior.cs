@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,107 +12,111 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.DynamicProxy;
-
-using System.Collections.Generic;
-using System.Reflection;
-using System.Linq;
-
 namespace Windsor.SLExample.Interceptors
 {
-    public class EditableBehavior : IInterceptor
-    {
-        private readonly IDictionary<PropertyInfo, object> _tempValues = new Dictionary<PropertyInfo, object>();
-        private bool _isInEditMode;
-        private Dictionary<string, PropertyInfo> _properties;
+	using System.Collections.Generic;
+	using System.Linq;
+	using System.Reflection;
 
-        public virtual bool IsEditing
-        {
-            get { return _isInEditMode; }
-        }
+	using Castle.DynamicProxy;
 
-        public void Intercept(IInvocation invocation)
-        {
-            switch (invocation.Method.Name)
-            {
-                case "BeginEdit":
-                    BeginEdit();
-                    return;
-                case "CancelEdit":
-                    CancelEdit();
-                    return;
-                case "EndEdit":
-                    EndEdit(invocation.InvocationTarget ?? invocation.Proxy);
-                    return;
-                default:
-                    break;
-            }
+	public class EditableBehavior : IInterceptor
+	{
+		private readonly IDictionary<PropertyInfo, object> _tempValues = new Dictionary<PropertyInfo, object>();
+		private bool _isInEditMode;
+		private Dictionary<string, PropertyInfo> _properties;
 
-            if ((!invocation.Method.Name.StartsWith("get_") &&
-                 !invocation.Method.Name.StartsWith("set_")) || !IsEditing)
-            {
-                invocation.Proceed();
-                return;
-            }
+		public virtual bool IsEditing
+		{
+			get { return _isInEditMode; }
+		}
 
-            if (_properties == null)
-            {
-                IEnumerable<PropertyInfo> propertyInfos = invocation.InvocationTarget
-                                                                    .GetType()
-                                                                    .GetProperties(BindingFlags.Public | BindingFlags.Instance)
-                                                                    .Where(p => p.CanWrite);
-                //TODO: Enhance this.
-                _properties = new Dictionary<string, PropertyInfo>();
-                foreach (PropertyInfo propertyInfo in propertyInfos)
-                {
-                    if (!_properties.ContainsKey(propertyInfo.Name))
-                        _properties[propertyInfo.Name] = propertyInfo;
-                }
-            }
+		#region IInterceptor Members
 
-            bool isSet = invocation.Method.Name.StartsWith("set_");
-            string propertyName = invocation.Method.Name.Substring(4);
-            PropertyInfo property;
-            if (!_properties.TryGetValue(propertyName, out property))
-            {
-                invocation.Proceed();
-                return;
-            }
+		public void Intercept(IInvocation invocation)
+		{
+			switch (invocation.Method.Name)
+			{
+				case "BeginEdit":
+					BeginEdit();
+					return;
+				case "CancelEdit":
+					CancelEdit();
+					return;
+				case "EndEdit":
+					EndEdit(invocation.InvocationTarget ?? invocation.Proxy);
+					return;
+				default:
+					break;
+			}
 
-            if (isSet)
-            {
-                _tempValues[property] = invocation.Arguments[0];
-            }
-            else
-            {
-                invocation.Proceed();
-                object value;
-                if (_tempValues.TryGetValue(property, out value))
-                    invocation.ReturnValue = value;
-            }
-        }
+			if ((!invocation.Method.Name.StartsWith("get_") &&
+			     !invocation.Method.Name.StartsWith("set_")) || !IsEditing)
+			{
+				invocation.Proceed();
+				return;
+			}
 
-        public void BeginEdit()
-        {
-            _isInEditMode = true;
-        }
+			if (_properties == null)
+			{
+				var propertyInfos = invocation.InvocationTarget
+					.GetType()
+					.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+					.Where(p => p.CanWrite);
+				//TODO: Enhance this.
+				_properties = new Dictionary<string, PropertyInfo>();
+				foreach (var propertyInfo in propertyInfos)
+				{
+					if (!_properties.ContainsKey(propertyInfo.Name))
+						_properties[propertyInfo.Name] = propertyInfo;
+				}
+			}
 
-        public void CancelEdit()
-        {
-            _tempValues.Clear();
-            _isInEditMode = false;
-        }
+			var isSet = invocation.Method.Name.StartsWith("set_");
+			var propertyName = invocation.Method.Name.Substring(4);
+			PropertyInfo property;
+			if (!_properties.TryGetValue(propertyName, out property))
+			{
+				invocation.Proceed();
+				return;
+			}
 
-        public void EndEdit(object target)
-        {
-            _isInEditMode = false;
+			if (isSet)
+			{
+				_tempValues[property] = invocation.Arguments[0];
+			}
+			else
+			{
+				invocation.Proceed();
+				object value;
+				if (_tempValues.TryGetValue(property, out value))
+					invocation.ReturnValue = value;
+			}
+		}
 
-            foreach (PropertyInfo property in _tempValues.Keys)
-            {
-                property.SetValue(target, _tempValues[property], null);
-            }
+		#endregion
 
-            _tempValues.Clear();
-        }
-    }
+		public void BeginEdit()
+		{
+			_isInEditMode = true;
+		}
+
+		public void CancelEdit()
+		{
+			_tempValues.Clear();
+			_isInEditMode = false;
+		}
+
+		public void EndEdit(object target)
+		{
+			_isInEditMode = false;
+
+			foreach (var property in _tempValues.Keys)
+			{
+				property.SetValue(target, _tempValues[property], null);
+			}
+
+			_tempValues.Clear();
+		}
+	}
 }

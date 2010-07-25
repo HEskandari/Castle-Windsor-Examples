@@ -1,0 +1,390 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">True</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="63" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="913" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="542" fromTop="19" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:IModelFactory.cs" caret="176" fromTop="6" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="76" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="209" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="180" fromTop="7" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml" caret="781" fromTop="7" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="231" fromTop="6" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="1994" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="377" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="374" fromTop="12" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="2039" fromTop="11" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="159" fromTop="5" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="50" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="532" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="1805" fromTop="19" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:IModelFactory.cs" caret="164" fromTop="4" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="1395" fromTop="4" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="1670" fromTop="14" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="642" fromTop="17" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="63" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="151" fromTop="3" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="77" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Startup/f:GuyWire.cs" caret="959" fromTop="13" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="1134" fromTop="23" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="310" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="152" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="0" fromTop="0" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="275" fromTop="8" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="160" fromTop="3" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="186" fromTop="3" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="138" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="824" fromTop="19" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="589" fromTop="17" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="243" fromTop="10" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml" caret="781" fromTop="1" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="1340" fromTop="20" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="1279" fromTop="24" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="274" fromTop="6" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="229" fromTop="5" />
+      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="939" fromTop="20" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="30" />
+      <Item value="void" priority="8" />
+      <Item value="IWindowProvider" priority="0" />
+      <Item value="IWindsorContainer" priority="4" />
+      <Item value="GuyWire`0" priority="2" />
+      <Item value="IWindsorContainer`0" priority="3" />
+      <Item value="container" priority="15" />
+      <Item value="this" priority="6" />
+      <Item value="new" priority="14" />
+      <Item value="WindsorContainer" priority="0" />
+      <Item value="_container" priority="12" />
+      <Item value="FromAssembly" priority="0" />
+      <Item value="if" priority="2" />
+      <Item value="null" priority="7" />
+      <Item value="GuyWire" priority="1" />
+      <Item value="Exit" priority="0" />
+      <Item value="override" priority="0" />
+      <Item value="private" priority="6" />
+      <Item value="object" priority="3" />
+      <Item value="EventArgs`0" priority="0" />
+      <Item value="_guyWire" priority="4" />
+      <Item value="interface" priority="4" />
+      <Item value="string" priority="9" />
+      <Item value="int" priority="0" />
+      <Item value="Customer" priority="5" />
+      <Item value="IWindsorInstaller" priority="4" />
+      <Item value="ICustomerService" priority="0" />
+      <Item value="Transient" priority="2" />
+      <Item value="ICustomerService`0" priority="0" />
+      <Item value="return" priority="35" />
+      <Item value="List&lt;Customer&gt;" priority="0" />
+      <Item value="Firstname" priority="2" />
+      <Item value="Lastname" priority="2" />
+      <Item value="Id" priority="0" />
+      <Item value="MainView" priority="6" />
+      <Item value="RootVisual" priority="1" />
+      <Item value="IStartable" priority="0" />
+      <Item value="App`0" priority="0" />
+      <Item value="IMainView`0" priority="2" />
+      <Item value="StartupService`0" priority="1" />
+      <Item value="IMainView" priority="0" />
+      <Item value="view" priority="0" />
+      <Item value="AsyncCallback`0" priority="0" />
+      <Item value="IStartupService`0" priority="0" />
+      <Item value="AllTypes`0" priority="3" />
+      <Item value="t" priority="5" />
+      <Item value="false" priority="0" />
+      <Item value="c" priority="12" />
+      <Item value="AbstractFacility" priority="0" />
+      <Item value="delegate" priority="8" />
+      <Item value="MessageBox" priority="0" />
+      <Item value="DataContext" priority="2" />
+      <Item value="Component`0" priority="4" />
+      <Item value="CastleComponent" priority="0" />
+      <Item value="typeof" priority="4" />
+      <Item value="ShowCustomerCommand`0" priority="3" />
+      <Item value="Lifestyle" priority="0" />
+      <Item value="ShowCustomers" priority="0" />
+      <Item value="command" priority="0" />
+      <Item value="ServiceDescriptor`0" priority="0" />
+      <Item value="ServiceLocator" priority="2" />
+      <Item value="ServiceLocatorProvider" priority="0" />
+      <Item value="IServiceLocator" priority="0" />
+      <Item value="Adapter`0" priority="1" />
+      <Item value="readonly" priority="0" />
+      <Item value="serviceType" priority="3" />
+      <Item value="TService`0" priority="2" />
+      <Item value="key" priority="0" />
+      <Item value="Adapter" priority="0" />
+      <Item value="T`0" priority="2" />
+      <Item value="IRepository" priority="3" />
+      <Item value="Customer`0" priority="7" />
+      <Item value="Predicate" priority="0" />
+      <Item value="predicate" priority="1" />
+      <Item value="GetAllCustomers`0" priority="0" />
+      <Item value="GetAll`0" priority="0" />
+      <Item value="ICustomerRepository" priority="3" />
+      <Item value="ICustomerRepository`0" priority="1" />
+      <Item value="_mainView" priority="7" />
+      <Item value="mainView" priority="6" />
+      <Item value="var" priority="9" />
+      <Item value="TModel`0" priority="1" />
+      <Item value="value" priority="7" />
+      <Item value="INotifyPropertyChanged" priority="3" />
+      <Item value="protected" priority="1" />
+      <Item value="PropertyChanged" priority="1" />
+      <Item value="PropertyChangedEventArgs" priority="1" />
+      <Item value="propertyName" priority="0" />
+      <Item value="RaisePropertyChanged`0" priority="7" />
+      <Item value="TypeFilter" priority="0" />
+      <Item value="CurrentModel" priority="0" />
+      <Item value="ICommand" priority="0" />
+      <Item value="_showCustomersCommand" priority="0" />
+      <Item value="customers" priority="0" />
+      <Item value="customerRepository" priority="0" />
+      <Item value="repository" priority="3" />
+      <Item value="parameter" priority="4" />
+      <Item value="as" priority="3" />
+      <Item value="EditCustomerCommand`0" priority="0" />
+      <Item value="_editCustomerCommand" priority="2" />
+      <Item value="IList" priority="0" />
+      <Item value="static" priority="0" />
+      <Item value="CustomerRepository`0" priority="0" />
+      <Item value="CustomersData" priority="5" />
+      <Item value="true" priority="4" />
+      <Item value="EditCustomer`0" priority="0" />
+      <Item value="EditCustomersCommand`0" priority="1" />
+      <Item value="_customer" priority="0" />
+      <Item value="INotifyCollectionChanged" priority="0" />
+      <Item value="CurrentCustomer" priority="2" />
+      <Item value="_repository" priority="0" />
+      <Item value="_saveCustomerCommand" priority="0" />
+      <Item value="TwoWay" priority="0" />
+      <Item value="using" priority="1" />
+      <Item value="System" priority="1" />
+      <Item value="Linq" priority="1" />
+      <Item value="IInterceptor" priority="0" />
+      <Item value="IInterceptor`0" priority="0" />
+      <Item value="IEditableObject" priority="3" />
+      <Item value="InterceptorReference" priority="0" />
+      <Item value="EditableBehavior" priority="0" />
+      <Item value="INotifyPropertyChanged`0" priority="0" />
+      <Item value="NotifyPropertyChangedBehavior`0" priority="0" />
+      <Item value="NewCustomerCommand`0" priority="1" />
+      <Item value="NewCustomerView`0" priority="1" />
+      <Item value="_cancel" priority="0" />
+      <Item value="editable" priority="2" />
+      <Item value="customer" priority="0" />
+      <Item value="_newCustomerCommand" priority="0" />
+      <Item value="instance" priority="1" />
+      <Item value="ICustomerFactory`0" priority="2" />
+      <Item value="CustomerFactory`0" priority="1" />
+      <Item value="firstname" priority="1" />
+      <Item value="id" priority="0" />
+      <Item value="lastname" priority="0" />
+      <Item value="factory" priority="2" />
+      <Item value="IServiceLocator`0" priority="0" />
+      <Item value="locator" priority="1" />
+      <Item value="virtual" priority="0" />
+      <Item value="DataGrid`0" priority="0" />
+      <Item value="dg" priority="0" />
+      <Item value="target" priority="0" />
+      <Item value="_customersData" priority="1" />
+      <Item value="where" priority="0" />
+      <Item value="class" priority="0" />
+      <Item value="IShowCommand" priority="0" />
+      <Item value="ShowCommand" priority="3" />
+      <Item value="Show`1" priority="0" />
+      <Item value="EditCustomerView`0" priority="0" />
+      <Item value="CustomersView`0" priority="0" />
+      <Item value="_modelFactory" priority="0" />
+      <Item value="_currentModel" priority="0" />
+      <Item value="_models" priority="0" />
+      <Item value="oldModel" priority="0" />
+      <Item value="TypedFactoryFacility`0" priority="0" />
+      <Item value="Func" priority="0" />
+      <Item value="Property`0" priority="0" />
+      <Item value="DateTime`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.Windsor.IWindsorContainer">
+      <Item value="Install`0" priority="0" />
+      <Item value="Dispose`0" priority="0" />
+      <Item value="Register`0" priority="11" />
+      <Item value="Resolve`0" priority="7" />
+      <Item value="ResolveAll`1" priority="1" />
+      <Item value="AddFacility`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Castle.Windsor.Installer.FromAssembly">
+      <Item value="This`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Startup.GuyWire">
+      <Item value="Dewire`0" priority="1" />
+      <Item value="Wire`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Castle.MicroKernel.Registration.Component">
+      <Item value="For`5" priority="4" />
+      <Item value="IsCastleComponent`0" priority="0" />
+      <Item value="IsInSameNamespaceAs`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.ComponentRegistration`1">
+      <Item value="ImplementedBy`0" priority="3" />
+      <Item value="LifeStyle" priority="1" />
+      <Item value="Interceptors`0" priority="0" />
+      <Item value="Instance`0" priority="1" />
+      <Item value="AsFactory`1" priority="0" />
+      <Item value="DependsOn`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.Lifestyle.LifestyleGroup`1">
+      <Item value="Is`0" priority="1" />
+      <Item value="Singleton" priority="1" />
+      <Item value="Transient" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Windsor.SLExample.App">
+      <Item value="Current" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Application">
+      <Item value="RootVisual" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Castle.MicroKernel.Registration.AllTypes">
+      <Item value="FromThisAssembly`0" priority="3" />
+      <Item value="FromAssembly`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.FromAssemblyDescriptor">
+      <Item value="Where`0" priority="2" />
+      <Item value="BasedOn`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Type">
+      <Item value="Namespace" priority="3" />
+      <Item value="IsClass" priority="0" />
+      <Item value="IsInterface" priority="0" />
+      <Item value="IsAbstract" priority="0" />
+      <Item value="FindInterfaces`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="EndsWith`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.BasedOnDescriptor">
+      <Item value="Configure`0" priority="3" />
+      <Item value="ConfigureFor`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.ComponentRegistration">
+      <Item value="LifeStyle" priority="0" />
+      <Item value="ImplementedBy`0" priority="0" />
+      <Item value="Implementation" priority="0" />
+      <Item value="Proxy" priority="1" />
+      <Item value="DynamicParameters`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Facilities.ApplicationStartupFacility">
+      <Item value="Kernel" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.MessageBox">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Microsoft.Practices.ServiceLocation.ServiceLocator">
+      <Item value="SetLocatorProvider`0" priority="0" />
+      <Item value="Current" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.Practices.ServiceLocation.IServiceLocator">
+      <Item value="GetInstance`1" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Where`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="FirstOrDefault`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Views.IMainView">
+      <Item value="Show`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.ItemsControl">
+      <Item value="ItemsSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Services.ICustomerRepository">
+      <Item value="GetAll`0" priority="1" />
+      <Item value="Find`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.StackPanel">
+      <Item value="Orientation" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.ContentControl">
+      <Item value="Margin" priority="0" />
+      <Item value="MinHeight" priority="0" />
+      <Item value="MinWidth" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Data.RelativeSource">
+      <Item value="TemplatedParent" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Views.MainView">
+      <Item value="Show`1" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Model.Customer">
+      <Item value="Id" priority="1" />
+      <Item value="Firstname" priority="1" />
+      <Item value="Lastname" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Remove`0" priority="0" />
+      <Item value="Contains`0" priority="0" />
+      <Item value="Add`0" priority="3" />
+      <Item value="ae" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.Proxy.ProxyGroup`1">
+      <Item value="AdditionalInterfaces`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.ComponentModel.IEditableObject">
+      <Item value="CancelEdit`0" priority="0" />
+      <Item value="BeginEdit`0" priority="0" />
+      <Item value="EndEdit`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Services.ICustomerFactory">
+      <Item value="Create`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Data.Binding">
+      <Item value="UpdateSourceTrigger" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.DataGrid">
+      <Item value="ItemsSource" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Factories.IModelFactory">
+      <Item value="CreateModel`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Windsor.SLExample.Factories.CustomerFactory">
+      <Item value="Invoke`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Castle.MicroKernel.Registration.Property">
+      <Item value="ForKey`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Castle.MicroKernel.Registration.PropertyKey">
+      <Item value="Eq`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.IDictionary">
+      <Item value="Insert`1" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.DateTime">
+      <Item value="Now" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,20 +14,20 @@
 
 namespace Windsor.SLExample.Factories
 {
-    public interface IModelFactory
-    {
-        /// <summary>
-        /// Creates a new model
-        /// </summary>
-        /// <typeparam name="TModel"></typeparam>
-        /// <returns></returns>
-        TModel CreateModel<TModel>();
+	public interface IModelFactory
+	{
+		/// <summary>
+		/// Creates a new model
+		/// </summary>
+		/// <typeparam name="TModel"></typeparam>
+		/// <returns></returns>
+		TModel CreateModel<TModel>();
 
-        /// <summary>
-        /// Releases the instance to get 
-        /// garbage collected
-        /// </summary>
-        /// <param name="oldModel"></param>
-        void FreeUpModel(object oldModel);
-    }
+		/// <summary>
+		/// Releases the instance to get 
+		/// garbage collected
+		/// </summary>
+		/// <param name="oldModel"></param>
+		void FreeUpModel(object oldModel);
+	}
 }

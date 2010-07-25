@@ -1,4 +1,4 @@
-// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,33 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-using System.Collections.Generic;
-
 namespace Windsor.SLExample.Services
 {
-    public interface IRepository<T> : IRepository where T : class
-    {
-        /// <summary>
-        /// Finds one instance
-        /// </summary>
-        /// <returns></returns>
-        T Find(Func<T, bool> predicate);
+	using System;
+	using System.Collections.Generic;
 
-        /// <summary>
-        /// Gets all instances
-        /// </summary>
-        /// <returns></returns>
-        IList<T> GetAll();
+	public interface IRepository<T> : IRepository where T : class
+	{
+		/// <summary>
+		/// Finds one instance
+		/// </summary>
+		/// <returns></returns>
+		T Find(Func<T, bool> predicate);
 
-        /// <summary>
-        /// Saves the instance
-        /// </summary>
-        /// <param name="instance"></param>
-        void Save(T instance);
-    }
+		/// <summary>
+		/// Gets all instances
+		/// </summary>
+		/// <returns></returns>
+		IList<T> GetAll();
 
-    public interface IRepository
-    {
-    }
+		/// <summary>
+		/// Saves the instance
+		/// </summary>
+		/// <param name="instance"></param>
+		void Save(T instance);
+	}
+
+	public interface IRepository
+	{
+	}
 }

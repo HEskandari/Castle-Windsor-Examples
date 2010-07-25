@@ -1,4 +1,4 @@
-﻿// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+﻿// Copyright 2004-2010 Castle Project - http://www.castleproject.org/
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,19 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.Core;
-using Windsor.SLExample.Services;
-
 namespace Windsor.SLExample.Views
 {
-    [Transient]
-    public partial class EditCustomerView
-    {
-        public EditCustomerView(ICustomerRepository repository)
-        {
-            InitializeComponent();
+	using Castle.Core;
 
-            dg.ItemsSource = repository.GetAll();
-        }
-    }
+	using Windsor.SLExample.Services;
+
+	[Transient]
+	public partial class EditCustomerView
+	{
+		public EditCustomerView(ICustomerRepository repository)
+		{
+			InitializeComponent();
+
+			dg.ItemsSource = repository.GetAll();
+		}
+	}
 }
