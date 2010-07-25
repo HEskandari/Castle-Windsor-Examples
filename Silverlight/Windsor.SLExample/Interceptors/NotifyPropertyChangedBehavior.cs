@@ -1,7 +1,22 @@
+// Copyright 2004-2009 Castle Project - http://www.castleproject.org/
+// 
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     http://www.apache.org/licenses/LICENSE-2.0
+// 
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+using Castle.DynamicProxy;
+
 using System;
 using System.ComponentModel;
 using System.Reflection;
-using Castle.DynamicProxy;
 using System.Linq;
 
 namespace Windsor.SLExample.Interceptors
@@ -57,7 +72,11 @@ namespace Windsor.SLExample.Interceptors
         {
             if ("CancelEdit".Equals(methodName) && isEditableObject)
             {
-                foreach (PropertyInfo prop in proxy.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance).Where(p => p.CanWrite))
+                var properties = proxy.GetType()
+                                 .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                                 .Where(p => p.CanWrite);
+
+                foreach (var prop in properties)
                 {
                     OnPropertyChanged(proxy, new PropertyChangedEventArgs(prop.Name));
                 }
@@ -75,9 +94,7 @@ namespace Windsor.SLExample.Interceptors
         protected bool ShouldProceedWithInvocation(string methodName)
         {
             var methodsWithoutTarget = new[] { "add_PropertyChanged", "remove_PropertyChanged" };
-            if (methodsWithoutTarget.Contains(methodName))
-                return false;
-            return true;
+            return !methodsWithoutTarget.Contains(methodName);
         }
     }
 }

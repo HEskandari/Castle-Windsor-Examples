@@ -12,6 +12,7 @@
           <ctrl:DataGrid.Columns>
             <ctrl:DataGridTextColumn Binding="{Binding Firstname}" Header="First Name" />
             <ctrl:DataGridTextColumn Binding="{Binding Lastname}" Header="Last Name" />
+            <ctrl:DataGridTextColumn Binding="{Binding JoinedAt}" Header="Joined Date" IsReadOnly="True" />
           </ctrl:DataGrid.Columns>
         </ctrl:DataGrid>
 
