@@ -24,8 +24,8 @@ namespace Windsor.SLExample.Views
 	[Transient]
 	public partial class NewCustomerView : INotifyPropertyChanged
 	{
-		private Customer _customer;
-		private SaveCustomerCommand _save;
+		private Customer customer;
+		private SaveCustomerCommand save;
 
 		public NewCustomerView(Customer customer)
 		{
@@ -38,20 +38,20 @@ namespace Windsor.SLExample.Views
 
 		public Customer CurrentCustomer
 		{
-			get { return _customer; }
+			get { return customer; }
 			set
 			{
-				_customer = value;
+				customer = value;
 				RaisePropertyChanged("CurrentCustomer");
 			}
 		}
 
 		public SaveCustomerCommand Save
 		{
-			get { return _save; }
+			get { return save; }
 			set
 			{
-				_save = value;
+				save = value;
 				RaisePropertyChanged("Save");
 			}
 		}

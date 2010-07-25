@@ -26,11 +26,11 @@ namespace Windsor.SLExample.Commands
 	[CastleComponent(typeof (SaveCustomerCommand), Lifestyle = LifestyleType.Transient)]
 	public class SaveCustomerCommand : ICommand
 	{
-		public ICustomerRepository Repository;
+		private readonly ICustomerRepository repository;
 
 		public SaveCustomerCommand(ICustomerRepository repository)
 		{
-			Repository = repository;
+			this.repository = repository;
 		}
 
 		#region ICommand Members
@@ -47,7 +47,7 @@ namespace Windsor.SLExample.Commands
 
 			((IEditableObject) c).EndEdit();
 
-			Repository.Save(c);
+			repository.Save(c);
 		}
 
 		public event EventHandler CanExecuteChanged = delegate { };

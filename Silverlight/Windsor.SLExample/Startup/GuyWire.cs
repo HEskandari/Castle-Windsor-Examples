@@ -23,7 +23,7 @@ namespace Windsor.SLExample.Startup
 
 	public class GuyWire
 	{
-		private IWindsorContainer _container;
+		private IWindsorContainer container;
 
 		public GuyWire() : this(CreateContainer())
 		{
@@ -31,7 +31,7 @@ namespace Windsor.SLExample.Startup
 
 		public GuyWire(IWindsorContainer container)
 		{
-			_container = container;
+			this.container = container;
 		}
 
 		private static IWindsorContainer CreateContainer()
@@ -41,22 +41,22 @@ namespace Windsor.SLExample.Startup
 
 		public void Wire()
 		{
-			_container.Install(FromAssembly.This());
+			container.Install(FromAssembly.This());
 		}
 
 		public void Dewire()
 		{
-			if (_container != null)
+			if (container != null)
 			{
-				_container.Dispose();
+				container.Dispose();
 			}
 
-			_container = null;
+			container = null;
 		}
 
 		public UIElement GetRoot()
 		{
-			return _container.Resolve<MainView>();
+			return container.Resolve<MainView>();
 		}
 	}
 }

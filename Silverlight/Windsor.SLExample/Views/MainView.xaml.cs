@@ -24,58 +24,58 @@ namespace Windsor.SLExample.Views
 	[Singleton]
 	public partial class MainView : INotifyPropertyChanged
 	{
-		private readonly IModelFactory _models;
-		private object _currentModel;
-		private ShowCommand<EditCustomerView> _editCustomerCommand;
-		private ShowCommand<NewCustomerView> _newCustomerCommand;
-		private ShowCommand<CustomersView> _showCustomersCommand;
+		private readonly IModelFactory models;
+		private object currentModel;
+		private ShowCommand<EditCustomerView> editCustomerCommand;
+		private ShowCommand<NewCustomerView> newCustomerCommand;
+		private ShowCommand<CustomersView> showCustomersCommand;
 
 		public MainView(IModelFactory models)
 		{
 			InitializeComponent();
 
 			DataContext = this;
-			_models = models;
+			this.models = models;
 		}
 
 		public ShowCommand<CustomersView> ShowCustomers
 		{
-			get { return _showCustomersCommand; }
+			get { return showCustomersCommand; }
 			set
 			{
-				_showCustomersCommand = value;
+				showCustomersCommand = value;
 				RaisePropertyChanged("ShowCustomers");
 			}
 		}
 
 		public ShowCommand<EditCustomerView> EditCustomers
 		{
-			get { return _editCustomerCommand; }
+			get { return editCustomerCommand; }
 			set
 			{
-				_editCustomerCommand = value;
+				editCustomerCommand = value;
 				RaisePropertyChanged("EditCustomers");
 			}
 		}
 
 		public ShowCommand<NewCustomerView> NewCustomer
 		{
-			get { return _newCustomerCommand; }
+			get { return newCustomerCommand; }
 			set
 			{
-				_newCustomerCommand = value;
+				newCustomerCommand = value;
 				RaisePropertyChanged("NewCustomer");
 			}
 		}
 
 		public object CurrentModel
 		{
-			get { return _currentModel; }
+			get { return currentModel; }
 			private set
 			{
-				var oldModel = _currentModel;
-				_currentModel = value;
-				_models.FreeUpModel(oldModel);
+				var oldModel = currentModel;
+				currentModel = value;
+				models.FreeUpModel(oldModel);
 				RaisePropertyChanged("CurrentModel");
 			}
 		}
@@ -88,7 +88,7 @@ namespace Windsor.SLExample.Views
 
 		public void Show<TModel>()
 		{
-			CurrentModel = _models.CreateModel<TModel>();
+			CurrentModel = models.CreateModel<TModel>();
 		}
 
 		protected void RaisePropertyChanged(string propertyName)

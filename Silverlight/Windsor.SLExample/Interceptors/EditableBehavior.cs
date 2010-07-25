@@ -22,13 +22,13 @@ namespace Windsor.SLExample.Interceptors
 
 	public class EditableBehavior : IInterceptor
 	{
-		private readonly IDictionary<PropertyInfo, object> _tempValues = new Dictionary<PropertyInfo, object>();
-		private bool _isInEditMode;
-		private Dictionary<string, PropertyInfo> _properties;
+		private readonly IDictionary<PropertyInfo, object> tempValues = new Dictionary<PropertyInfo, object>();
+		private bool isInEditMode;
+		private Dictionary<string, PropertyInfo> properties;
 
 		public virtual bool IsEditing
 		{
-			get { return _isInEditMode; }
+			get { return isInEditMode; }
 		}
 
 		#region IInterceptor Members
@@ -57,25 +57,25 @@ namespace Windsor.SLExample.Interceptors
 				return;
 			}
 
-			if (_properties == null)
+			if (properties == null)
 			{
 				var propertyInfos = invocation.InvocationTarget
 					.GetType()
 					.GetProperties(BindingFlags.Public | BindingFlags.Instance)
 					.Where(p => p.CanWrite);
 				//TODO: Enhance this.
-				_properties = new Dictionary<string, PropertyInfo>();
+				properties = new Dictionary<string, PropertyInfo>();
 				foreach (var propertyInfo in propertyInfos)
 				{
-					if (!_properties.ContainsKey(propertyInfo.Name))
-						_properties[propertyInfo.Name] = propertyInfo;
+					if (!properties.ContainsKey(propertyInfo.Name))
+						properties[propertyInfo.Name] = propertyInfo;
 				}
 			}
 
 			var isSet = invocation.Method.Name.StartsWith("set_");
 			var propertyName = invocation.Method.Name.Substring(4);
 			PropertyInfo property;
-			if (!_properties.TryGetValue(propertyName, out property))
+			if (!properties.TryGetValue(propertyName, out property))
 			{
 				invocation.Proceed();
 				return;
@@ -83,13 +83,13 @@ namespace Windsor.SLExample.Interceptors
 
 			if (isSet)
 			{
-				_tempValues[property] = invocation.Arguments[0];
+				tempValues[property] = invocation.Arguments[0];
 			}
 			else
 			{
 				invocation.Proceed();
 				object value;
-				if (_tempValues.TryGetValue(property, out value))
+				if (tempValues.TryGetValue(property, out value))
 					invocation.ReturnValue = value;
 			}
 		}
@@ -98,25 +98,25 @@ namespace Windsor.SLExample.Interceptors
 
 		public void BeginEdit()
 		{
-			_isInEditMode = true;
+			isInEditMode = true;
 		}
 
 		public void CancelEdit()
 		{
-			_tempValues.Clear();
-			_isInEditMode = false;
+			tempValues.Clear();
+			isInEditMode = false;
 		}
 
 		public void EndEdit(object target)
 		{
-			_isInEditMode = false;
+			isInEditMode = false;
 
-			foreach (var property in _tempValues.Keys)
+			foreach (var property in tempValues.Keys)
 			{
-				property.SetValue(target, _tempValues[property], null);
+				property.SetValue(target, tempValues[property], null);
 			}
 
-			_tempValues.Clear();
+			tempValues.Clear();
 		}
 	}
 }

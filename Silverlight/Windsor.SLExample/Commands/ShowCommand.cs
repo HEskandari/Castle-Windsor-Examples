@@ -25,11 +25,11 @@ namespace Windsor.SLExample.Commands
 	[CastleComponent(typeof (ShowCommand<>), Lifestyle = LifestyleType.Transient)]
 	public class ShowCommand<TView> : ICommand where TView : UIElement
 	{
-		private readonly MainView _mainView;
+		private readonly MainView mainView;
 
 		public ShowCommand(MainView mainView)
 		{
-			_mainView = mainView;
+			this.mainView = mainView;
 		}
 
 		#region ICommand Members
@@ -50,7 +50,7 @@ namespace Windsor.SLExample.Commands
 
 		private void Show()
 		{
-			_mainView.Show<TView>();
+			mainView.Show<TView>();
 		}
 	}
 }

@@ -23,7 +23,7 @@ namespace Windsor.SLExample
 
 	public partial class App
 	{
-		private readonly GuyWire _guyWire = new GuyWire();
+		private readonly GuyWire guyWire = new GuyWire();
 
 		public App()
 		{
@@ -36,23 +36,25 @@ namespace Windsor.SLExample
 
 		private void OnStartup(object sender, StartupEventArgs e)
 		{
-			_guyWire.Wire();
+			guyWire.Wire();
 
-			RootVisual = _guyWire.GetRoot();
+			RootVisual = guyWire.GetRoot();
 		}
 
 		private void OnExit(object sender, EventArgs e)
 		{
-			_guyWire.Dewire();
+			guyWire.Dewire();
 		}
 
 		private void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
 		{
-			if (!Debugger.IsAttached)
+			if (Debugger.IsAttached)
 			{
-				e.Handled = true;
-				Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
+				return;
 			}
+
+			e.Handled = true;
+			Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
 		}
 
 		private void ReportErrorToDOM(ApplicationUnhandledExceptionEventArgs e)

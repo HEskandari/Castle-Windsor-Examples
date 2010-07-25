@@ -27,14 +27,14 @@ namespace Windsor.SLExample.Services.Impl
 	/// </summary>
 	public class CustomerRepository : ICustomerRepository
 	{
-		private readonly IList<Customer> _customersData;
-		private readonly string _serviceUri;
+		private readonly IList<Customer> customersData;
+		private readonly string serviceUri;
 
 		public CustomerRepository(CustomerFactory factory, string serviceUri)
 		{
-			_serviceUri = serviceUri; //The service Uri you'll use to fetch the data from.
+			this.serviceUri = serviceUri; //The service Uri you'll use to fetch the data from.
 
-			_customersData = new List<Customer>
+			customersData = new List<Customer>
 			                 	{
 			                 		factory.Invoke("John", "Doe"),
 			                 		factory.Invoke("Jane", "Doe")
@@ -50,14 +50,14 @@ namespace Windsor.SLExample.Services.Impl
 
 		public IList<Customer> GetAll()
 		{
-			return _customersData;
+			return customersData;
 		}
 
 		public void Save(Customer instance)
 		{
-			if (!_customersData.Contains(instance))
+			if (!customersData.Contains(instance))
 			{
-				_customersData.Add(instance);
+				customersData.Add(instance);
 			}
 		}
 

@@ -23,7 +23,7 @@ namespace Windsor.SLExample.Interceptors
 
 	public class NotifyPropertyChangedBehavior : IInterceptor
 	{
-		private PropertyChangedEventHandler _handler;
+		private PropertyChangedEventHandler handler;
 
 		#region IInterceptor Members
 
@@ -58,18 +58,18 @@ namespace Windsor.SLExample.Interceptors
 
 		protected void OnPropertyChanged(Object sender, PropertyChangedEventArgs e)
 		{
-			var eventHandler = _handler;
+			var eventHandler = handler;
 			if (eventHandler != null) eventHandler(sender, e);
 		}
 
 		protected void RemoveHandler(Delegate @delegate)
 		{
-			_handler = (PropertyChangedEventHandler) Delegate.Remove(_handler, @delegate);
+			handler = (PropertyChangedEventHandler) Delegate.Remove(handler, @delegate);
 		}
 
 		protected void StoreHandler(Delegate @delegate)
 		{
-			_handler = (PropertyChangedEventHandler) Delegate.Combine(_handler, @delegate);
+			handler = (PropertyChangedEventHandler) Delegate.Combine(handler, @delegate);
 		}
 
 		protected void NotifyPropertyChanged(string methodName, object proxy, bool isEditableObject)
