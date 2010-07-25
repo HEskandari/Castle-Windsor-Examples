@@ -19,7 +19,7 @@ namespace Windsor.SLExample.Installers
             container.AddFacility<TypedFactoryFacility>();
             container.Register(Component.For<ICustomerRepository>()
                                    .ImplementedBy<CustomerRepository>()
-                                   .DependsOn(Property.ForKey("connectinString").Eq("Fake connection string for fake repository, but you get the idea")),
+                                   .DependsOn(Property.ForKey("connectionString").Eq("Fake connection string for fake repository, but you get the idea")),
                                Component.For<IModelFactory>()
                                    .AsFactory());
         }

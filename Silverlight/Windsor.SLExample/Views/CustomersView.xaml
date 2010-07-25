@@ -12,6 +12,7 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding Path=Firstname}" Margin="4" />
                     <TextBlock Text="{Binding Path=Lastname}" Margin="4" />
+                    <TextBlock Text="{Binding Path=JoinedAt}" Margin="4" />
                 </StackPanel>
             </DataTemplate>
         </ListBox.ItemTemplate>
