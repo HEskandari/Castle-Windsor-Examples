@@ -2,18 +2,18 @@
 
 	<StackPanel Orientation="Vertical" Width="400">
 
-		<StackPanel Orientation="Horizontal">
+		<StackPanel Orientation="Horizontal" Margin="2">
 			<TextBlock Text="Firstname: " />
 			<TextBox Text="{Binding CurrentCustomer.Firstname, Mode=TwoWay}" Width="100" />
 		</StackPanel>
 
-		<StackPanel Orientation="Horizontal">
+		<StackPanel Orientation="Horizontal" Margin="2">
 			<TextBlock Text="Lastname: " />
 			<TextBox Text="{Binding CurrentCustomer.Lastname, Mode=TwoWay}" Width="100" />
 		</StackPanel>
 
 
-		<Button Content="Save" Command="{Binding Save}" CommandParameter="{Binding CurrentCustomer}" />
+		<Button Content="Save" Command="{Binding Save}" CommandParameter="{Binding CurrentCustomer}" Margin="2"/>
 
 	</StackPanel>
 
