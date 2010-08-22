@@ -3,7 +3,10 @@ container. Inside there are some general practices such as various methods to Re
 instances, life time management of objects as well as examples to show how you can add 
 aspect-like features to your classes using Castle Dynamic Proxy.
 
+To read more about the patterns and features of Windsor used in this sample application
+you can check the wiki page [2] on castle webpage.
+
 Think you can help? Send in your patches, comments or ideas at "h.eskandari@gmail.com".
 
 [1] http://www.castleproject.org/
-
+[2] http://stw.castleproject.org/Windsor.Silvertlight_Sample_App_Customer_contact_manager.ashx
