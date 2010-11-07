@@ -16,5 +16,5 @@ namespace Castle.Samples.WindsorSilverlight.Factories
 {
 	using Castle.Samples.WindsorSilverlight.Model;
 
-	public delegate Customer CustomerFactory(string firstName, string lastName);
+	public delegate Customer CustomerFactory(string firstName, string lastName, int age);
 }

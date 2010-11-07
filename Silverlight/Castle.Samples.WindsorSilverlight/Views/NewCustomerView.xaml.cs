@@ -24,15 +24,18 @@ namespace Castle.Samples.WindsorSilverlight.Views
 	public partial class NewCustomerView : INotifyPropertyChanged
 	{
 		private Customer customer;
-		private SaveCustomerCommand save;
+		private SaveCustomerCommand saveCommand;
+		private DeleteAllCommand deleteAllCommand;
 
-		public NewCustomerView(Customer customer)
+		public NewCustomerView(Customer customer, SaveCustomerCommand saveCommand, DeleteAllCommand deleteCommand)
 		{
 			InitializeComponent();
 
 			DataContext = this;
 
 			CurrentCustomer = customer;
+			SaveCommand = saveCommand;
+			DeleteAllCommand = deleteCommand;
 		}
 
 		public Customer CurrentCustomer
@@ -45,19 +48,29 @@ namespace Castle.Samples.WindsorSilverlight.Views
 			}
 		}
 
-		public SaveCustomerCommand Save
+		public SaveCustomerCommand SaveCommand
 		{
-			get { return save; }
+			get { return saveCommand; }
 			set
 			{
-				save = value;
-				RaisePropertyChanged("Save");
+				saveCommand = value;
+				RaisePropertyChanged("SaveCommand");
+			}
+		}
+
+		public DeleteAllCommand DeleteAllCommand
+		{
+			get { return deleteAllCommand; }
+			set
+			{
+				deleteAllCommand = value;
+				RaisePropertyChanged("DeleteAllCommand");
 			}
 		}
 
 		#region INotifyPropertyChanged Members
 
-		public event PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
 		#endregion
 

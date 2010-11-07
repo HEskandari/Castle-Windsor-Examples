@@ -36,8 +36,8 @@ namespace Castle.Samples.WindsorSilverlight.Services.Impl
 
 			customersData = new List<Customer>
 			                 	{
-			                 		factory.Invoke("John", "Doe"),
-			                 		factory.Invoke("Jane", "Doe")
+			                 		factory.Invoke("John", "Doe", 30),
+			                 		factory.Invoke("Jane", "Doe", 25)
 			                 	};
 		}
 

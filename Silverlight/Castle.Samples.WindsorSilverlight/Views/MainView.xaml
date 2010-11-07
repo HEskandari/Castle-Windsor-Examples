@@ -7,6 +7,8 @@
 		<Button Command="{Binding NewCustomer}" Width="200" Margin="2">New Customer</Button>
 
 		<ContentControl Content="{Binding Path=CurrentModel}" Margin="10" HorizontalContentAlignment="Center" />
+		
+		<TextBlock Foreground="Red" x:Name="ErrorContent" />
 
 	</StackPanel>
 

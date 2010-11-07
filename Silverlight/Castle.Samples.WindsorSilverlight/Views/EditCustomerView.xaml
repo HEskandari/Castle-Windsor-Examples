@@ -6,18 +6,24 @@
 			<ctrl:DataGrid.Columns>
 				<ctrl:DataGridTextColumn Binding="{Binding Firstname}" Header="First Name" />
 				<ctrl:DataGridTextColumn Binding="{Binding Lastname}" Header="Last Name" />
+				<ctrl:DataGridTextColumn Binding="{Binding Age}" Header="Age" />
 				<ctrl:DataGridTextColumn Binding="{Binding JoinedAt}" Header="Joined Date" IsReadOnly="True" />
 			</ctrl:DataGrid.Columns>
 		</ctrl:DataGrid>
 
+		<Button Content="Validate Selected Customer" Click="ValidateCurrent" Margin="5" />
+
+		<TextBlock Foreground="Red" x:Name="error" />
+
 		<TextBlock Margin="5" TextWrapping="Wrap" FontFamily="Trebuchet MS" FontSize="14">
 			This shows how to add cross-cutting concerns to your model objects. 
 			Things Like PropertyChange notification or making your object editable 
-			by dynamically implementing IEditableObject interface.
-			<LineBreak />
-			<LineBreak />
-			Try entering some data in a row and then cancelling the edit by pressing Escape key.
+			by dynamically implementing IEditableObject interface.<LineBreak /><LineBreak />
+			Try entering some data in a row and then cancelling the edit by pressing Escape key.<LineBreak /><LineBreak />
+			Validate button shows current grid row's validation errors, if there is any. Currently customers should have
+			First and Last names, and their age must be between 18 and smaller or equal to 60.<LineBreak />
 		</TextBlock>
+
 	</StackPanel>
 
 </UserControl>

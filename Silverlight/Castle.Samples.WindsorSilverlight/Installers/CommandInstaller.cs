@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Castle.Samples.WindsorSilverlight.Interceptors;
+
 namespace Castle.Samples.WindsorSilverlight.Installers
 {
 	using Castle.MicroKernel.Registration;
@@ -25,10 +27,9 @@ namespace Castle.Samples.WindsorSilverlight.Installers
 		public void Install(IWindsorContainer container, IConfigurationStore store)
 		{
 			//Register using CastleComponent attribute
-
 			container.Register(AllTypes.FromThisAssembly()
-			                   	.Where(t => t.Namespace.EndsWith("Commands") &&
-			                   	            Component.IsCastleComponent(t)));
+								.Where(t => t.Namespace.EndsWith("Commands") && Component.IsCastleComponent(t))
+								.Configure(c => c.Interceptors(typeof(AuthorizationBehavior))));
 		}
 
 		#endregion

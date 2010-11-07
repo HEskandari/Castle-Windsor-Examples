@@ -34,19 +34,26 @@ namespace Castle.Samples.WindsorSilverlight.Commands
 
 		#region ICommand Members
 
-		public bool CanExecute(object parameter)
+		public virtual bool CanExecute(object parameter)
 		{
-			var c = parameter as Customer;
-			return c != null;
+			var customer = parameter as Customer;
+
+			return customer != null;
 		}
 
-		public void Execute(object parameter)
+		public virtual void Execute(object parameter)
 		{
-			var c = parameter as Customer;
+			var customer = parameter as Customer;
+			var validation = (IDataErrorInfo)customer;
 
-			((IEditableObject) c).EndEdit();
+			((IEditableObject) customer).EndEdit();
 
-			repository.Save(c);
+			//Only save if there is no validation error
+			//Customer object dynamically implements IDataErrorInfo
+			if (string.IsNullOrEmpty(validation.Error))
+			{
+				repository.Save(customer);
+			}
 		}
 
 		public event EventHandler CanExecuteChanged = delegate { };

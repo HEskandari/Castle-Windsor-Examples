@@ -12,6 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System.ComponentModel;
+using System.Windows;
+using Castle.Samples.WindsorSilverlight.Model;
+
 namespace Castle.Samples.WindsorSilverlight.Views
 {
 	using Castle.Core;
@@ -25,6 +29,16 @@ namespace Castle.Samples.WindsorSilverlight.Views
 			InitializeComponent();
 
 			dg.ItemsSource = repository.GetAll();
+		}
+
+		private void ValidateCurrent(object sender, RoutedEventArgs e)
+		{
+			var customer = dg.SelectedItem as Customer;
+			if (customer != null)
+			{
+				var validationError = ((IDataErrorInfo)customer).Error; //Customer implements IDataErrorInfo dynamically
+				error.Text = validationError;
+			}
 		}
 	}
 }

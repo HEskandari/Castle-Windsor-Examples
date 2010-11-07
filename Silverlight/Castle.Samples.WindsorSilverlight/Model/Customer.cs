@@ -23,6 +23,8 @@ namespace Castle.Samples.WindsorSilverlight.Model
 			JoinedAt = joinedAt;
 		}
 
+        public virtual int Age { get; set; }
+
 		public virtual DateTime JoinedAt { get; private set; }
 
 		public virtual string Firstname { get; set; }

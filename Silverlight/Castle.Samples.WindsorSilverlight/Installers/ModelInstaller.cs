@@ -31,14 +31,16 @@ namespace Castle.Samples.WindsorSilverlight.Installers
 		{
 			//Add interceptors and behaviors to the object
 			container.Register(AllTypes.FromThisAssembly()
-			                   	.Where(Component.IsInSameNamespaceAs<Customer>())
-			                   	.Configure(c => c.LifeStyle.Transient
-			                   	                	.Proxy.AdditionalInterfaces(typeof (IEditableObject),
-			                   	                	                            typeof (INotifyPropertyChanged))
-			                   	                	.Interceptors(typeof (EditableBehavior),
-			                   	                	              typeof (NotifyPropertyChangedBehavior)))
-			                   	.ConfigureFor<Customer>(c => c.DynamicParameters(
-			                   		(k, @params) => @params.Insert(DateTime.Now))));
+								.Where(Component.IsInSameNamespaceAs<Customer>())
+								.Configure(c => c.LifeStyle.Transient
+												 .Proxy.AdditionalInterfaces(typeof(IEditableObject),
+																			 typeof(INotifyPropertyChanged),
+																			 typeof(IDataErrorInfo))
+												 .Interceptors(typeof(EditableBehavior),
+															   typeof(NotifyPropertyChangedBehavior),
+															   typeof(DataErrorInfoBehavior)))
+								.ConfigureFor<Customer>(c => c.DynamicParameters(
+									(k, @params) => @params.Insert(DateTime.Now))));
 		}
 
 		#endregion

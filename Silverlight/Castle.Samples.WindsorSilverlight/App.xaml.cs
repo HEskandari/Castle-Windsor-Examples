@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Castle.Samples.WindsorSilverlight.Views;
+
 namespace Castle.Samples.WindsorSilverlight
 {
 	using System;
@@ -48,13 +50,16 @@ namespace Castle.Samples.WindsorSilverlight
 
 		private void OnUnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
 		{
-			if (Debugger.IsAttached)
-			{
-				return;
-			}
-
 			e.Handled = true;
-			Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
+
+			if(e.ExceptionObject is UnauthorizedAccessException)
+			{
+				ShowMessage(e.ExceptionObject.Message);
+			}
+			else
+			{
+				Deployment.Current.Dispatcher.BeginInvoke(() => ReportErrorToDOM(e));
+			}
 		}
 
 		private void ReportErrorToDOM(ApplicationUnhandledExceptionEventArgs e)
@@ -68,6 +73,15 @@ namespace Castle.Samples.WindsorSilverlight
 			}
 			catch (Exception)
 			{
+			}
+		}
+
+		private void ShowMessage(string message)
+		{
+			var view = RootVisual as MainView;
+			if(view != null)
+			{
+				view.ShowError(message);
 			}
 		}
 	}

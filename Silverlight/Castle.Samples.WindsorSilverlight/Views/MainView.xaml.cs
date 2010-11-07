@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
+
 namespace Castle.Samples.WindsorSilverlight.Views
 {
 	using System.ComponentModel;
@@ -93,6 +95,11 @@ namespace Castle.Samples.WindsorSilverlight.Views
 		protected void RaisePropertyChanged(string propertyName)
 		{
 			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+
+		public void ShowError(string message)
+		{
+			ErrorContent.Text = message;
 		}
 	}
 }

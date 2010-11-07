@@ -22,13 +22,13 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 
 	public class EditableBehavior : IInterceptor
 	{
-		private readonly IDictionary<PropertyInfo, object> tempValues = new Dictionary<PropertyInfo, object>();
-		private bool isInEditMode;
+		private readonly IDictionary<PropertyInfo, object> edittedValues = new Dictionary<PropertyInfo, object>();
+		private bool isEditing;
 		private Dictionary<string, PropertyInfo> properties;
 
 		public virtual bool IsEditing
 		{
-			get { return isInEditMode; }
+			get { return isEditing; }
 		}
 
 		#region IInterceptor Members
@@ -51,7 +51,8 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 			}
 
 			if ((!invocation.Method.Name.StartsWith("get_") &&
-			     !invocation.Method.Name.StartsWith("set_")) || !IsEditing)
+				 !invocation.Method.Name.StartsWith("set_")) || !IsEditing ||
+				  invocation.InvocationTarget == null)
 			{
 				invocation.Proceed();
 				return;
@@ -60,20 +61,22 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 			if (properties == null)
 			{
 				var propertyInfos = invocation.InvocationTarget
-					.GetType()
-					.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-					.Where(p => p.CanWrite);
-				//TODO: Enhance this.
+											  .GetType()
+											  .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+											  .Where(p => p.CanWrite);
+
 				properties = new Dictionary<string, PropertyInfo>();
+
 				foreach (var propertyInfo in propertyInfos)
 				{
 					if (!properties.ContainsKey(propertyInfo.Name))
-						properties[propertyInfo.Name] = propertyInfo;
+						properties.Add(propertyInfo.Name, propertyInfo);
 				}
 			}
 
-			var isSet = invocation.Method.Name.StartsWith("set_");
+			var isSetter = invocation.Method.Name.StartsWith("set_");
 			var propertyName = invocation.Method.Name.Substring(4);
+
 			PropertyInfo property;
 			if (!properties.TryGetValue(propertyName, out property))
 			{
@@ -81,15 +84,16 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 				return;
 			}
 
-			if (isSet)
+			if (isSetter)
 			{
-				tempValues[property] = invocation.Arguments[0];
+				edittedValues[property] = invocation.Arguments[0];
 			}
 			else
 			{
 				invocation.Proceed();
 				object value;
-				if (tempValues.TryGetValue(property, out value))
+
+				if (edittedValues.TryGetValue(property, out value))
 					invocation.ReturnValue = value;
 			}
 		}
@@ -98,25 +102,25 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 
 		public void BeginEdit()
 		{
-			isInEditMode = true;
+			isEditing = true;
 		}
 
 		public void CancelEdit()
 		{
-			tempValues.Clear();
-			isInEditMode = false;
+			edittedValues.Clear();
+			isEditing = false;
 		}
 
 		public void EndEdit(object target)
 		{
-			isInEditMode = false;
+			isEditing = false;
 
-			foreach (var property in tempValues.Keys)
+			foreach (var property in edittedValues.Keys)
 			{
-				property.SetValue(target, tempValues[property], null);
+				property.SetValue(target, edittedValues[property], null);
 			}
 
-			tempValues.Clear();
+			edittedValues.Clear();
 		}
 	}
 }

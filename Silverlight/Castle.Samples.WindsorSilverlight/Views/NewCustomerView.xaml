@@ -1,20 +1,41 @@
 ﻿<UserControl x:Class="Castle.Samples.WindsorSilverlight.Views.NewCustomerView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="400">
 
-	<StackPanel Orientation="Vertical" Width="400">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
 
-		<StackPanel Orientation="Horizontal" Margin="2">
-			<TextBlock Text="Firstname: " />
-			<TextBox Text="{Binding CurrentCustomer.Firstname, Mode=TwoWay}" Width="100" />
-		</StackPanel>
+		<TextBlock Text="Firstname: " VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Margin="5" />
+		<TextBlock Text="Lastname: " VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Margin="5" />
+		<TextBlock Text="Age: " VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" Margin="5" />
+		<TextBlock Text="Joined At: " VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" Margin="5" />
 
-		<StackPanel Orientation="Horizontal" Margin="2">
-			<TextBlock Text="Lastname: " />
-			<TextBox Text="{Binding CurrentCustomer.Lastname, Mode=TwoWay}" Width="100" />
-		</StackPanel>
+		<TextBox Text="{Binding CurrentCustomer.Firstname, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" MinWidth="100" Margin="5" Grid.Row="0" Grid.Column="1" />
+		<TextBox Text="{Binding CurrentCustomer.Lastname, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" MinWidth="100" Margin="5" Grid.Row="1" Grid.Column="1" />
+		<TextBox Text="{Binding CurrentCustomer.Age, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" MinWidth="100" Margin="5" Grid.Row="2" Grid.Column="1" />
+		<TextBox Text="{Binding CurrentCustomer.JoinedAt, Mode=TwoWay, ValidatesOnDataErrors=True, ValidatesOnNotifyDataErrors=True}" IsReadOnly="True" MinWidth="100" Margin="5" Grid.Row="3" Grid.Column="1" />
 
+		<Button Content="Save" 
+				Command="{Binding SaveCommand}" 
+				CommandParameter="{Binding CurrentCustomer}" 
+				Grid.Row="4" Grid.ColumnSpan="2"
+				Margin="2"/>
 
-		<Button Content="Save" Command="{Binding Save}" CommandParameter="{Binding CurrentCustomer}" Margin="2"/>
+		<Button Content="Administration"
+				Command="{Binding DeleteAllCommand}"
+				Grid.Row="5" Grid.ColumnSpan="2"
+				Margin="2"/>
+		
+	</Grid>
 
-	</StackPanel>
 
 </UserControl>

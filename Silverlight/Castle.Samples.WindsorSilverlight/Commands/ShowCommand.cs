@@ -33,12 +33,12 @@ namespace Castle.Samples.WindsorSilverlight.Commands
 
 		#region ICommand Members
 
-		public bool CanExecute(object parameter)
+		public virtual bool CanExecute(object parameter)
 		{
 			return true;
 		}
 
-		public void Execute(object parameter)
+		public virtual void Execute(object parameter)
 		{
 			Show();
 		}

@@ -66,8 +66,8 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\..\Lib\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>..\..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="FluentValidation.Silverlight">
+      <HintPath>..\..\Lib\FluentValidation.Silverlight.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System.Windows" />
@@ -83,23 +83,34 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\DeleteAllCommand.cs" />
     <Compile Include="Commands\ShowCommand.cs" />
     <Compile Include="Commands\SaveCustomerCommand.cs" />
     <Compile Include="Factories\CustomerFactory.cs" />
     <Compile Include="Factories\IModelFactory.cs" />
+    <Compile Include="Installers\AuthorizationInstaller.cs" />
     <Compile Include="Installers\BehaviorInstaller.cs" />
     <Compile Include="Installers\CommandInstaller.cs" />
     <Compile Include="Installers\ModelInstaller.cs" />
     <Compile Include="Installers\ServiceInstaller.cs" />
+    <Compile Include="Installers\ValidatorInstaller.cs" />
     <Compile Include="Installers\ViewInstaller.cs" />
+    <Compile Include="Interceptors\AuthorizationBehavior.cs" />
+    <Compile Include="Interceptors\DataErrorInfoBehavior.cs" />
     <Compile Include="Interceptors\EditableBehavior.cs" />
     <Compile Include="Interceptors\NotifyPropertyChangedBehavior.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AppIdentity.cs" />
+    <Compile Include="Security\AppPrincipal.cs" />
+    <Compile Include="Security\AuthorizationManager.cs" />
+    <Compile Include="Security\AuthorizeAttribute.cs" />
     <Compile Include="Services\ICustomerRepository.cs" />
     <Compile Include="Services\Impl\CustomerRepository.cs" />
     <Compile Include="Services\IRepository.cs" />
     <Compile Include="Startup\GuyWire.cs" />
+    <Compile Include="TypeSelector\FluentValidatorServiceSelector.cs" />
+    <Compile Include="Validators\CustomerValidator.cs" />
     <Compile Include="Views\EditCustomerView.xaml.cs">
       <DependentUpon>EditCustomerView.xaml</DependentUpon>
     </Compile>
