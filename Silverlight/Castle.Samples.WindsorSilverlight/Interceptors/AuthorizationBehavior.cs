@@ -51,7 +51,7 @@ namespace Castle.Samples.WindsorSilverlight.Interceptors
 
 				if(!string.IsNullOrEmpty(requiredRole) && !authorizationManager.CurrentPrincipal.IsInRole(requiredRole)) //Has requested role
 				{
-					throw new UnauthorizedAccessException("Invalid access.");
+					throw new UnauthorizedAccessException(string.Format("Invalid access. You need {0} role for this operation.", requiredRole));
 				}
 
 				//Logged-in and has necessary roles, continue

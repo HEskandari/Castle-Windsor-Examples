@@ -12,13 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using Castle.Samples.WindsorSilverlight.Interceptors;
-
 namespace Castle.Samples.WindsorSilverlight.Installers
 {
 	using Castle.MicroKernel.Registration;
 	using Castle.MicroKernel.SubSystems.Configuration;
 	using Castle.Windsor;
+	using Castle.Samples.WindsorSilverlight.Interceptors;
 
 	public class CommandInstaller : IWindsorInstaller
 	{

@@ -84,6 +84,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Commands\DeleteAllCommand.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
+    <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\ShowCommand.cs" />
     <Compile Include="Commands\SaveCustomerCommand.cs" />
     <Compile Include="Factories\CustomerFactory.cs" />
@@ -105,12 +107,18 @@
     <Compile Include="Security\AppPrincipal.cs" />
     <Compile Include="Security\AuthorizationManager.cs" />
     <Compile Include="Security\AuthorizeAttribute.cs" />
+    <Compile Include="Security\IAuthenticationManager.cs" />
+    <Compile Include="Security\IAuthorizationManager.cs" />
     <Compile Include="Services\ICustomerRepository.cs" />
     <Compile Include="Services\Impl\CustomerRepository.cs" />
     <Compile Include="Services\IRepository.cs" />
+    <Compile Include="Services\IStatusService.cs" />
     <Compile Include="Startup\GuyWire.cs" />
     <Compile Include="TypeSelector\FluentValidatorServiceSelector.cs" />
     <Compile Include="Validators\CustomerValidator.cs" />
+    <Compile Include="Views\AuthorizationView.xaml.cs">
+      <DependentUpon>AuthorizationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditCustomerView.xaml.cs">
       <DependentUpon>EditCustomerView.xaml</DependentUpon>
     </Compile>
@@ -129,6 +137,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Views\AuthorizationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditCustomerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

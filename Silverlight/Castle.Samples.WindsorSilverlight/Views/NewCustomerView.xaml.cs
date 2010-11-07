@@ -25,7 +25,6 @@ namespace Castle.Samples.WindsorSilverlight.Views
 	{
 		private Customer customer;
 		private SaveCustomerCommand saveCommand;
-		private DeleteAllCommand deleteAllCommand;
 
 		public NewCustomerView(Customer customer, SaveCustomerCommand saveCommand, DeleteAllCommand deleteCommand)
 		{
@@ -35,7 +34,6 @@ namespace Castle.Samples.WindsorSilverlight.Views
 
 			CurrentCustomer = customer;
 			SaveCommand = saveCommand;
-			DeleteAllCommand = deleteCommand;
 		}
 
 		public Customer CurrentCustomer
@@ -55,16 +53,6 @@ namespace Castle.Samples.WindsorSilverlight.Views
 			{
 				saveCommand = value;
 				RaisePropertyChanged("SaveCommand");
-			}
-		}
-
-		public DeleteAllCommand DeleteAllCommand
-		{
-			get { return deleteAllCommand; }
-			set
-			{
-				deleteAllCommand = value;
-				RaisePropertyChanged("DeleteAllCommand");
 			}
 		}
 

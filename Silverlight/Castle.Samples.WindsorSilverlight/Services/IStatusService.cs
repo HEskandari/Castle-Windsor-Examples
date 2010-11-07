@@ -12,22 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Castle.Samples.WindsorSilverlight.Installers
+namespace Castle.Samples.WindsorSilverlight.Services
 {
-	using Castle.MicroKernel.Registration;
-	using Castle.MicroKernel.SubSystems.Configuration;
-	using Castle.Samples.WindsorSilverlight.Security;
-	using Castle.Windsor;
-
-	public class AuthorizationInstaller : IWindsorInstaller
+	public interface IStatusService
 	{
-		#region IWindsorInstaller Members
+		/// <summary>
+		/// Show an error message
+		/// </summary>
+		/// <param name="message"></param>
+		void ShowError(string message);
 
-		public void Install(IWindsorContainer container, IConfigurationStore store)
-		{
-			container.Register(Component.For(new[] { typeof(IAuthenticationManager), typeof(IAuthorizationManager) }).ImplementedBy<AuthorizationManager>());
-		}
-
-		#endregion
+		/// <summary>
+		/// Shows a message
+		/// </summary>
+		/// <param name="message"></param>
+		void ShowMessage(string message);
 	}
 }

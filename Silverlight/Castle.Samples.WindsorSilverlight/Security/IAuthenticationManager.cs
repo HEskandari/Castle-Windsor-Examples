@@ -12,22 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-namespace Castle.Samples.WindsorSilverlight.Installers
+namespace Castle.Samples.WindsorSilverlight.Security
 {
-	using Castle.MicroKernel.Registration;
-	using Castle.MicroKernel.SubSystems.Configuration;
-	using Castle.Samples.WindsorSilverlight.Security;
-	using Castle.Windsor;
-
-	public class AuthorizationInstaller : IWindsorInstaller
+	public interface IAuthenticationManager
 	{
-		#region IWindsorInstaller Members
+		/// <summary>
+		/// Run authentication scheme and login the user.
+		/// </summary>
+		/// <param name="username"></param>
+		/// <param name="password"></param>
+		/// <param name="isSuperUser"></param>
+		void Login(string username, string password, bool isSuperUser);
 
-		public void Install(IWindsorContainer container, IConfigurationStore store)
-		{
-			container.Register(Component.For(new[] { typeof(IAuthenticationManager), typeof(IAuthorizationManager) }).ImplementedBy<AuthorizationManager>());
-		}
-
-		#endregion
+		/// <summary>
+		/// Logouts the currently logged-in user
+		/// </summary>
+		void Logout();
 	}
 }

@@ -12,24 +12,25 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-using System;
-
 namespace Castle.Samples.WindsorSilverlight.Views
 {
 	using System.ComponentModel;
+	using System.Windows.Media;
 
 	using Castle.Core;
 	using Castle.Samples.WindsorSilverlight.Commands;
 	using Castle.Samples.WindsorSilverlight.Factories;
+	using Castle.Samples.WindsorSilverlight.Services;
 
 	[Singleton]
-	public partial class MainView : INotifyPropertyChanged
+	public partial class MainView : INotifyPropertyChanged, IStatusService
 	{
 		private readonly IModelFactory models;
 		private object currentModel;
 		private ShowCommand<EditCustomerView> editCustomerCommand;
 		private ShowCommand<NewCustomerView> newCustomerCommand;
 		private ShowCommand<CustomersView> showCustomersCommand;
+		private ShowCommand<AuthorizationView> authorizationCommand;
 
 		public MainView(IModelFactory models)
 		{
@@ -69,6 +70,16 @@ namespace Castle.Samples.WindsorSilverlight.Views
 			}
 		}
 
+		public ShowCommand<AuthorizationView> Authorization
+		{
+			get { return authorizationCommand; }
+			set
+			{
+				authorizationCommand = value;
+				RaisePropertyChanged("Authorization");
+			}
+		}
+
 		public object CurrentModel
 		{
 			get { return currentModel; }
@@ -99,6 +110,13 @@ namespace Castle.Samples.WindsorSilverlight.Views
 
 		public void ShowError(string message)
 		{
+			ErrorContent.Foreground = new SolidColorBrush(Colors.Red);
+			ErrorContent.Text = message;
+		}
+
+		public void ShowMessage(string message)
+		{
+			ErrorContent.Foreground = new SolidColorBrush(Colors.Black);
 			ErrorContent.Text = message;
 		}
 	}

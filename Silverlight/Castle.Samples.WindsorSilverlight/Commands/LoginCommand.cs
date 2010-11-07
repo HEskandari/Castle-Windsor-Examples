@@ -21,29 +21,31 @@ namespace Castle.Samples.WindsorSilverlight.Commands
 	using Castle.Samples.WindsorSilverlight.Security;
 	using Castle.Samples.WindsorSilverlight.Services;
 
-	[CastleComponent(typeof(DeleteAllCommand), Lifestyle = LifestyleType.Transient)]
-	public class DeleteAllCommand : ICommand
+	[CastleComponent(typeof(LoginCommand), Lifestyle = LifestyleType.Transient)]
+	public class LoginCommand : ICommand
 	{
+		private readonly IAuthenticationManager authenticationManager;
 		private readonly IStatusService statusService;
 
-		public DeleteAllCommand(IStatusService statusService)
+		public LoginCommand(IAuthenticationManager authenticationManager, IStatusService statusService)
 		{
+			this.authenticationManager = authenticationManager;
 			this.statusService = statusService;
 		}
 
 		#region ICommand Members
 
-		public virtual bool CanExecute(object parameter)
+		public bool CanExecute(object parameter)
 		{
 			return true;
 		}
 
-		[Authorize(Role = "SuperUser")]
-		public virtual void Execute(object parameter)
+		public void Execute(object parameter)
 		{
-			//administrative level entry only.
-			//do your crazy stuff in here.
-			statusService.ShowMessage("Command executed successfully.");
+			var isSuperuser = bool.Parse(parameter.ToString());
+			authenticationManager.Login("SuperUser", "myPass", isSuperuser);
+
+			statusService.ShowMessage("Logged-in successfully");
 		}
 
 		public event EventHandler CanExecuteChanged;

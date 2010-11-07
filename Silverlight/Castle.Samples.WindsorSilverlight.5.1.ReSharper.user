@@ -7,70 +7,8 @@
     </boolean>
   </SettingsComponent>
   <RecentFiles>
-    <RecentFiles>
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml" caret="781" fromTop="7" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ServiceInstaller.cs" caret="374" fromTop="12" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:CustomersView.xaml.cs" caret="0" fromTop="0" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Validators/f:CustomerValidator.cs" caret="861" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:TypeSelector/f:FluentValidatorServiceSelector.cs" caret="954" fromTop="24" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Factories/f:CustomerFactory.cs" caret="839" fromTop="18" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Services/d:Impl/f:CustomerRepository.cs" caret="1436" fromTop="30" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ViewInstaller.cs" caret="913" fromTop="22" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ValidatorInstaller.cs" caret="1574" fromTop="37" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:EditableBehavior.cs" caret="2730" fromTop="40" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Model/f:Customer.cs" caret="732" fromTop="18" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Security/f:AppPrincipal.cs" caret="774" fromTop="18" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Security/f:AppIdentity.cs" caret="644" fromTop="13" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:DataErrorInfoBehavior.cs" caret="644" fromTop="13" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml" caret="1152" fromTop="13" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:AuthorizationInstaller.cs" caret="1176" fromTop="28" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Security/f:AuthorizationManager.cs" caret="936" fromTop="25" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Security/f:AuthorizeAttribute.cs" caret="769" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:EditCustomerView.xaml.cs" caret="0" fromTop="0" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml" caret="2221" fromTop="12" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:CommandInstaller.cs" caret="1200" fromTop="30" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="1689" fromTop="25" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="1389" fromTop="26" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="1253" fromTop="31" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="306" fromTop="4" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="1208" fromTop="2" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml" caret="822" fromTop="10" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="1638" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="2212" fromTop="18" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="2610" fromTop="24" />
-    </RecentFiles>
-    <RecentEdits>
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="1939" fromTop="35" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="914" fromTop="7" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml" caret="685" fromTop="6" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="1897" fromTop="24" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="1851" fromTop="38" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml" caret="2221" fromTop="12" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:ModelInstaller.cs" caret="1689" fromTop="25" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Installers/f:CommandInstaller.cs" caret="1111" fromTop="29" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="689" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="618" fromTop="17" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="1168" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:NewCustomerView.xaml.cs" caret="1330" fromTop="27" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="341" fromTop="12" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="509" fromTop="17" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:DeleteAllCommand.cs" caret="397" fromTop="11" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="1252" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:SaveCustomerCommand.cs" caret="1389" fromTop="26" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="1388" fromTop="25" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="1051" fromTop="19" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="1172" fromTop="26" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Commands/f:ShowCommand.cs" caret="1253" fromTop="31" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="1923" fromTop="26" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="1894" fromTop="25" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Interceptors/f:AuthorizationBehavior.cs" caret="1632" fromTop="20" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="1932" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="1498" fromTop="13" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="1688" fromTop="21" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml" caret="822" fromTop="10" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/d:Views/f:MainView.xaml.cs" caret="2622" fromTop="24" />
-      <File id="AA5D0FCD-8441-4057-B2E3-B7D98EB129D4/f:App.xaml.cs" caret="2166" fromTop="15" />
-    </RecentEdits>
+    <RecentFiles />
+    <RecentEdits />
   </RecentFiles>
   <NAntValidationSettings>
     <NAntPath value="" />

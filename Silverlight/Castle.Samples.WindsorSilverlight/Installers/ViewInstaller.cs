@@ -12,11 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Castle.Samples.WindsorSilverlight.Services;
+
 namespace Castle.Samples.WindsorSilverlight.Installers
 {
 	using Castle.MicroKernel.Registration;
 	using Castle.MicroKernel.SubSystems.Configuration;
 	using Castle.Windsor;
+	using Castle.Samples.WindsorSilverlight.Views;
 
 	public class ViewInstaller : IWindsorInstaller
 	{
@@ -26,7 +29,8 @@ namespace Castle.Samples.WindsorSilverlight.Installers
 		{
 			//Register all types and filter by namespace
 			container.Register(AllTypes.FromThisAssembly()
-								.Where(Component.IsInNamespace("Castle.Samples.WindsorSilverlight.Views")));
+								.Where(Component.IsInNamespace("Castle.Samples.WindsorSilverlight.Views"))
+								.ConfigureFor<MainView>(c => c.Forward(typeof(IStatusService))));
 		}
 
 		#endregion

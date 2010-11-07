@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using Castle.Samples.WindsorSilverlight.Services;
 using Castle.Samples.WindsorSilverlight.Views;
 
 namespace Castle.Samples.WindsorSilverlight
@@ -54,7 +55,8 @@ namespace Castle.Samples.WindsorSilverlight
 
 			if(e.ExceptionObject is UnauthorizedAccessException)
 			{
-				ShowMessage(e.ExceptionObject.Message);
+				var ex = e.ExceptionObject as UnauthorizedAccessException;
+				ShowMessage(ex.Message);
 			}
 			else
 			{
@@ -78,10 +80,10 @@ namespace Castle.Samples.WindsorSilverlight
 
 		private void ShowMessage(string message)
 		{
-			var view = RootVisual as MainView;
-			if(view != null)
+			var statusService = RootVisual as IStatusService;
+			if(statusService != null)
 			{
-				view.ShowError(message);
+				statusService.ShowError(message);
 			}
 		}
 	}

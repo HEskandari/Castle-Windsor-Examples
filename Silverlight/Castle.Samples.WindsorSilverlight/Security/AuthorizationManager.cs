@@ -15,17 +15,44 @@
 namespace Castle.Samples.WindsorSilverlight.Security
 {
 	using System.Security.Principal;
+	using System.Collections.Generic;
+	using System.Linq;
 
-	public interface IAuthorizationManager
-	{
-		IPrincipal CurrentPrincipal { get; set; }
-	}
-
-	public class AuthorizationManager : IAuthorizationManager
+	public class AuthorizationManager : IAuthorizationManager, IAuthenticationManager
 	{
 		public IPrincipal CurrentPrincipal
 		{
 			get; set;
 		}
+
+		#region IAuthenticationManager
+
+		public void Login(string username, string password, bool isSuperUser)
+		{
+			var roles = GetRoles(isSuperUser);
+
+			CurrentPrincipal = new AppPrincipal(new AppIdentity(username, true), roles.ToArray());
+		}
+
+		public void Logout()
+		{
+			CurrentPrincipal = null;
+		}
+
+		#endregion
+
+		#region IAuthorizationManager
+
+		private IList<string> GetRoles(bool isSuperUser)
+		{
+			var roles = new List<string> { "Guest", "User" };
+			
+			if(isSuperUser)
+				roles.Add("SuperUser");
+
+			return roles;
+		}
+
+		#endregion
 	}
 }
